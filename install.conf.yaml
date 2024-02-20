@@ -8,9 +8,12 @@
 - clean: ['~']
 
 - link:
-    ~/.config: config
+    ~/.config/alacritty: alacritty
+    ~/.config/conky: conky
+    ~/.config/git: git
+    ~/.config/kitty: kitty
+    ~/.config/qtile: qtile
+    ~/.config/vim: vim
     ~/.oh-my-zsh: oh-my-zsh
     ~/.tmux.conf: tmux.conf
-    ~/.vim: vim
-    ~/.vimrc: vimrc
     ~/.zshenv: zshenv
