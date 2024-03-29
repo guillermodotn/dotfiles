@@ -1,3 +1,7 @@
+
+# Installation command
+# dotbot -c install.conf.yaml
+
 - defaults:
     link:
       relink: true
@@ -13,9 +17,9 @@
     ~/.config/git: git
     ~/.config/kitty: kitty
     ~/.config/qtile: qtile
-    ~/.config/vim: vim
-    ~/.config/zsh/.zshprofile: zshprofile
+    ~/.vim: vim
     ~/.config/zsh/.zshrc: zshrc
     ~/.oh-my-zsh: oh-my-zsh
+    ~/.zprofile: zprofile
     ~/.tmux.conf: tmux.conf
     ~/.zshenv: zshenv
