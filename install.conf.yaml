@@ -18,8 +18,9 @@
     ~/.config/kitty: kitty
     ~/.config/qtile: qtile
     ~/.vim: vim
-    ~/.config/zsh/.zshrc: zshrc
+    ~/.zshrc: zshrc
     ~/.oh-my-zsh: oh-my-zsh
     ~/.zprofile: zprofile
     ~/.tmux.conf: tmux.conf
     ~/.zshenv: zshenv
+    ~/.config/VSCodium/User/settings.json: codium/settings.json
