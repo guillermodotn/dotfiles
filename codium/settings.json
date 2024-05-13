@@ -5,11 +5,11 @@
     "window.zoomLevel": 1,
     "workbench.iconTheme": "material-icon-theme",
     "git.autofetch": true,
-    "workbench.colorTheme": "Default Light+",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.copyOnSelection": true,
     "terminal.integrated.mouseWheelZoom": true,
     "terminal.integrated.smoothScrolling": true,
     "terminal.integrated.stickyScroll.enabled": true,
-    "terminal.integrated.tabs.title": "${cwdFolder}"
+    "terminal.integrated.tabs.title": "${cwdFolder}",
+    "workbench.colorTheme": "Default Light Modern"
 }

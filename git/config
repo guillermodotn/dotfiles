@@ -1,5 +1,7 @@
-[user]
-	name = Guillermo-N
-	email = 106453304+Guillermo-N@users.noreply.github.com
 [init]
 	defaultBranch = main
+[core]
+	editor = codium -w
+[user]
+	name = guillermodotn
+	email = guillerm0.n@outlook.es
