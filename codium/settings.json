@@ -5,11 +5,38 @@
     "window.zoomLevel": 1,
     "workbench.iconTheme": "material-icon-theme",
     "git.autofetch": true,
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "bash",
+            "icon": "terminal-bash",
+        },
+        "zsh": {
+            "path": "zsh"
+        },
+        "python3-repl": {
+            "path": "bpython",
+            "args": ["-q"]
+        },
+        "bpython-repl": {
+            "path": "python3",
+            "args": ["-q"]
+        }
+    },
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.copyOnSelection": true,
     "terminal.integrated.mouseWheelZoom": true,
     "terminal.integrated.smoothScrolling": true,
     "terminal.integrated.stickyScroll.enabled": true,
     "terminal.integrated.tabs.title": "${cwdFolder}",
-    "workbench.colorTheme": "Default Light Modern"
+    "workbench.colorTheme": "Adapta Nokto",
+    "editor.minimap.scale": 3,
+    "editor.cursorWidth": 3,
+    "terminal.external.linuxExec": "gnome-console",
+    "python.pipenvPath": "${env:HOME}/.local/bin/pipenv",
+    "python.poetryPath": "${env:HOME}/.local/bin/poetry",
+    "python.condaPath": "${env:HOME}/.local/bin/conda",
+    "window.autoDetectColorScheme": true,
+    "workbench.preferredDarkColorTheme": "United Ubuntu",
+    "workbench.preferredLightColorTheme": "Quiet Light",
+    "editor.minimap.enabled": false,
 }
