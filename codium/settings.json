@@ -2,7 +2,6 @@
     "files.autoSave": "afterDelay",
     "window.menuBarVisibility": "toggle",
     "redhat.telemetry.enabled": false,
-    "window.zoomLevel": 1,
     "workbench.iconTheme": "material-icon-theme",
     "git.autofetch": true,
     "terminal.integrated.profiles.linux": {
@@ -36,7 +35,13 @@
     "python.poetryPath": "${env:HOME}/.local/bin/poetry",
     "python.condaPath": "${env:HOME}/.local/bin/conda",
     "window.autoDetectColorScheme": true,
-    "workbench.preferredDarkColorTheme": "United Ubuntu",
-    "workbench.preferredLightColorTheme": "Quiet Light",
+    "workbench.preferredDarkColorTheme": "Gnome Dark (Atom One)",
+    "workbench.preferredLightColorTheme": "Gnome Light (Atom One)",
     "editor.minimap.enabled": false,
+    "editor.fontFamily": "'Mononoki Nerd Font Mono'",
+    "scm.inputFontFamily": "editor",
+    "markdown.preview.fontFamily": "'UbuntuSans Nerd Font Regular'",
+    "editor.fontSize": 20,
+    "terminal.integrated.fontSize": 20,
+    "window.zoomLevel": -0.5,
 }
