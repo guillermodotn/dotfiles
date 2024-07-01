@@ -44,4 +44,5 @@
     "editor.fontSize": 20,
     "terminal.integrated.fontSize": 20,
     "window.zoomLevel": -0.5,
+    "python.defaultInterpreterPath": "/home/guillermo/Repos/test/.venv",
 }
