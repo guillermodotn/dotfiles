@@ -24,6 +24,11 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
+# If vim set it to default editor.
+if command -v vim &> /dev/null; then
+	export EDITOR='vim'
+fi
+
 # Aliasses
 alias ll="ls -la"
 alias la="ls -a"
