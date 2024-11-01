@@ -11,11 +11,7 @@ syntax enable
 " This mapping comments a line in Python
 map c I#<Space><ESC>=<CR>
 
-" User-defined commands must start with a capital letter
-command! RefreshConfig source $MYVIMRC
-
 " custom leader key
 let mapleader = ","
 
 set number
-colorscheme elflord
