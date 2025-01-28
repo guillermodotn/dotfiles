@@ -7,10 +7,35 @@
     "window.menuBarVisibility": "toggle",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.copyOnSelection": true,
-    "editor.fontFamily": "'Mononoki Nerd Font Mono'",
     "[markdown]": {
         "editor.wordWrap": "wordWrapColumn",
         "editor.wordWrapColumn": 120,
         "editor.rulers": [120]
+    },
+    "[yaml]": {
+        "editor.insertSpaces": true,             // Use spaces instead of tabs
+        "editor.tabSize": 2,                     // Set tab size to 2 spaces
+        "editor.formatOnSave": true,             // Auto-format YAML files on save
+        "editor.autoIndent": "full",             // Enable full auto-indentation
+        "editor.rulers": [80],                   // Show a vertical ruler at 80 characters
+        "editor.wordWrap": "wordWrapColumn",     // Enable word wrapping at the ruler
+        "editor.wordWrapColumn": 80              // Wrap lines at 80 characters
+    },
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-workflow.json": "/*.github/workflows/*",   // Associate GitHub Actions workflows
+        "https://json.schemastore.org/dependabot-v2.json": "dependabot.yml"             // Dependabot configuration
+    },
+    "yaml.format.enable": true,                // Enable YAML formatting
+    "yaml.validate": true,                     // Enable YAML validation
+    "yaml.lint.onSave": true,                  // Lint YAML files on save
+    "[python]": {
+        "editor.formatOnSave": true,            // Automatically format code on save
+        "editor.insertSpaces": true,            // Use spaces instead of tabs
+        "editor.tabSize": 4,                    // Set tab size to 4 (PEP 8 standard)
+        "editor.wordWrap": "wordWrapColumn",    // Disable word wrap for better readability
+        "editor.rulers": [72, 79],              // Highlight 72 for docstrings, 79 for code
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true      // Automatically organize imports
+        }
     }
 }
