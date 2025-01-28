@@ -25,3 +25,4 @@
     ~/.tmux.conf: tmux.conf
     #~/.zshenv: zshenv
     #~/.config/VSCodium/User/settings.json: codium/settings.json
+    ~/.config/Code/User/settings.json: codium/settings.json
