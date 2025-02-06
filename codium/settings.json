@@ -7,6 +7,13 @@
     "window.menuBarVisibility": "toggle",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.copyOnSelection": true,
+    "[html]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.formatOnSave": true,
+        "editor.rulers": [120],
+        "editor.wordWrapColumn": 120
+    },
     "[markdown]": {
         "editor.wordWrap": "wordWrapColumn",
         "editor.wordWrapColumn": 120,
@@ -35,7 +42,7 @@
         "editor.wordWrap": "wordWrapColumn",    // Disable word wrap for better readability
         "editor.rulers": [72, 79],              // Highlight 72 for docstrings, 79 for code
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true      // Automatically organize imports
+            "source.organizeImports": "explicit"
         }
     }
 }
