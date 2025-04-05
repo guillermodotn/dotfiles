@@ -41,7 +41,7 @@
         "editor.formatOnSave": true,            // Automatically format code on save
         "editor.insertSpaces": true,            // Use spaces instead of tabs
         "editor.tabSize": 4,                    // Set tab size to 4 (PEP 8 standard)
-        "editor.wordWrap": "wordWrapColumn",    // Disable word wrap for better readability
+        "editor.wordWrap": "off",    // Disable word wrap for better readability
         "editor.rulers": [72, 79],              // Highlight 72 for docstrings, 79 for code
         "editor.codeActionsOnSave": {
             "source.organizeImports": "explicit"
