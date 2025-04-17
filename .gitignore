@@ -1,1 +1,12 @@
 __pycache__/
+
+# Secrets and private config
+*.key
+*.pem
+*.crt
+*.gpg
+private/
+secrets/
+.env
+.gitconfig.local
+.ssh/
