@@ -1,0 +1,9 @@
+alias ll='ls -lah'                   # Detailed list
+alias la='ls -A'                     # List all except . and ..
+alias ..='cd ..'                     # Go up one dir
+alias ...='cd ../..'                 # Go up two dirs
+alias c='clear'                      # Clear screen
+alias h='history'                    # Show command history
+
+
+alias docker='podman'
