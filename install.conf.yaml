@@ -13,6 +13,7 @@
 
 - link:
     ~/.aliases: .aliases
+    ~/.bashrc.d/prompt.sh: prompt.sh
     #~/.bashrc: bashrc
     #~/.config/alacritty: alacritty
     #~/.config/conky: conky
