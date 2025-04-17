@@ -12,7 +12,8 @@
 - clean: ['~']
 
 - link:
-    ~/.bashrc: bashrc
+    ~/.aliases: .aliases
+    #~/.bashrc: bashrc
     #~/.config/alacritty: alacritty
     #~/.config/conky: conky
     ~/.config/git: git

@@ -6,4 +6,13 @@ alias c='clear'                      # Clear screen
 alias h='history'                    # Show command history
 
 
-alias docker='podman'
+# Alias podman as docker if podman is installed and docker isn't
+if command -v podman &> /dev/null && ! command -v docker &> /dev/null; then
+    alias docker='podman'
+fi
+
+
+# Alias kubectl through minikube if minikube is installed but kubectl isn't
+if command -v minikube &> /dev/null && ! command -v kubectl &> /dev/null; then
+    alias kubectl="minikube kubectl --"
+fi
