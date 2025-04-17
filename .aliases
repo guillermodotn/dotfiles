@@ -8,6 +8,9 @@ alias h='history'                    # Show command history
 # Python
 alias py='python'
 
+# Git
+alias gl='git log --oneline --graph --all'
+
 # Alias podman as docker if podman is installed and docker isn't
 if command -v podman &> /dev/null && ! command -v docker &> /dev/null; then
     alias docker='podman'
