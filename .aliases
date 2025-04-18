@@ -21,3 +21,8 @@ fi
 if command -v minikube &> /dev/null && ! command -v kubectl &> /dev/null; then
     alias kubectl="minikube kubectl --"
 fi
+
+# Alias code as codium
+if command -v codium &> /dev/null && ! command -v code &> /dev/null; then
+    alias code='codium'
+fi
