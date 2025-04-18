@@ -30,11 +30,4 @@ if command -v vim &> /dev/null; then
 fi
 
 # Aliasses
-alias ll="ls -la"
-alias la="ls -a"
-
-# If codium alias as (code).
-if command -v codium &> /dev/null; then
-    alias code='codium'
-fi
-
+. ~/.aliases
