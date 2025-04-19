@@ -17,7 +17,8 @@
     #~/.bashrc: bashrc
     #~/.config/alacritty: alacritty
     #~/.config/conky: conky
-    ~/.config/git: git
+    ~/.config/lsd: lsd/
+    ~/.config/git: git/
     #~/.config/kitty: kitty
     #~/.config/qtile: qtile
     ~/.vim: vim
