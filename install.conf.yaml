@@ -19,9 +19,12 @@
     #~/.config/conky: conky
     ~/.config/lsd: lsd/
     ~/.config/git: git/
+    ~/.config/bpytop/bpytop.conf: bpytop/bpytop.conf
+    ~/.config/btop/btop.conf: btop/btop.conf
     #~/.config/kitty: kitty
     #~/.config/qtile: qtile
     ~/.vim: vim
+    ~/.config/nvim/init.vim: nvim/init.vim
     #~/.zshrc: zshrc
     #~/.oh-my-zsh: oh-my-zsh
     #~/.zprofile: zprofile
