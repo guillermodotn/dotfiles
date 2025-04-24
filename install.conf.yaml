@@ -29,6 +29,7 @@
     #~/.oh-my-zsh: oh-my-zsh
     #~/.zprofile: zprofile
     ~/.tmux.conf: tmux.conf
+    ~/.config/bpython/config: bpython/config
     #~/.zshenv: zshenv
     #~/.config/VSCodium/User/settings.json: codium/settings.json
     ~/.config/Code/User/settings.json: codium/settings.json
