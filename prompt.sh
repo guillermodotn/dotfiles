@@ -19,8 +19,10 @@ git_branch() {
             git_color='\e[0;33m'
         fi
 
-        # Return the formatted branch with status (escape parentheses)
-        echo -e "${git_color} (${branch})"
+        # Return the formatted branch with status,
+        # wrapping the color codes with \[ and \] so Bash knows they are non-printing.
+        # Also, add a reset at the end of the branch output.
+        echo -e "\[${git_color}\] (${branch})\[\e[0m\]"
     fi
 }
 
@@ -44,4 +46,5 @@ else
 fi
 
 # Build PS1 prompt with conditional color for host
-PS1="${USER_COLOR}\u@${HOST_COLOR}\h${SEP_COLOR}:${USER_COLOR}\w\[\e[0m\]\$(git_branch)${SEP_COLOR}\$ \[\e[0m\]"
+#PS1="${USER_COLOR}\u${SEP_COLOR}@${HOST_COLOR}\h${SEP_COLOR}:${USER_COLOR}\w\[\e[0m\]$(git_branch)${SEP_COLOR}\$ \[\e[0m\]"
+PS1="${USER_COLOR}\u${SEP_COLOR}@${HOST_COLOR}redhat${SEP_COLOR}:${USER_COLOR}\w\[\e[0m\]$(git_branch)${SEP_COLOR}\$ \[\e[0m\]"
