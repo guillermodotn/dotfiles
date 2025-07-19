@@ -46,5 +46,4 @@ else
 fi
 
 # Build PS1 prompt with conditional color for host
-#PS1="${USER_COLOR}\u${SEP_COLOR}@${HOST_COLOR}\h${SEP_COLOR}:${USER_COLOR}\w\[\e[0m\]$(git_branch)${SEP_COLOR}\$ \[\e[0m\]"
-PS1="${USER_COLOR}\u${SEP_COLOR}@${HOST_COLOR}redhat${SEP_COLOR}:${USER_COLOR}\w\[\e[0m\]$(git_branch)${SEP_COLOR}\$ \[\e[0m\]"
+PS1="${USER_COLOR}\u${SEP_COLOR}@${HOST_COLOR}\h${SEP_COLOR}:${USER_COLOR}\w\[\e[0m\]$(git_branch)${SEP_COLOR}\$ \[\e[0m\]"
