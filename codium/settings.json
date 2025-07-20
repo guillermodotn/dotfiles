@@ -1,14 +1,78 @@
 {
-    "workbench.colorTheme": "Visual Studio Dark - C++",
-    "workbench.preferredDarkColorTheme": "Visual Studio Dark",
-    "workbench.preferredLightColorTheme": "Visual Studio Light",
+    // --- General Editor Preferences ---
+    "editor.fontSize": 14, // Your preferred font size
+    "editor.tabSize": 4, // Consistent tab size
+    "editor.insertSpaces": true, // Always use spaces instead of tabs
+    "editor.renderWhitespace": "all", // See all whitespace (dots for spaces, arrows for tabs)
+    "editor.renderControlCharacters": true, // Show control characters
+    "editor.rulers": [80, 120], // Vertical lines at 80 and 120 chars for code style
+    "editor.minimap.enabled": true, // Small code overview on the right
+    "editor.wordWrap": "on", // Wrap long lines
+    "editor.formatOnSave": true, // Automatically format code on save
+    "editor.defaultFormatter": "ms-python.black-formatter", // Set a default formatter (install extension first)
+    "editor.linkedEditing": true, // Simultaneously change matching tags/elements
+    "editor.suggest.insertMode": "replace", // Replace existing text with suggestion
+    "editor.fontFamily": "'Mononoki Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
+    "containers.containerClient": "com.microsoft.visualstudio.containers.podman",
+    "dev.containers.dockerPath": "podman",
+
+      // --- Files & Saving ---
+    "files.autoSave": "afterDelay", // Auto-save files after a delay
+    "files.autoSaveDelay": 1000, // 1 second delay for auto-save
+    "files.eol": "\n", // Use Unix-style line endings by default
+    "files.trimTrailingWhitespace": true, // Remove trailing whitespace on save
+    "files.insertFinalNewline": true, // Ensure file ends with a newline
+
+     // --- Workbench & UI ---
+    "workbench.colorTheme": "Default Dark Modern", // Or your favorite theme
+    "workbench.preferredDarkColorTheme": "Visual Studio Dark", // This is your choice for dark mode
+    "workbench.preferredLightColorTheme": "Visual Studio Light", // This is your choice for light mode
     "window.autoDetectColorScheme": true,
-    "files.autoSave": "afterDelay",
+    "workbench.iconTheme": "vs-minimal", // Or your favorite icon theme
+    "workbench.startupEditor": "none", // Open VS Code with no active editor
+    "workbench.editor.showTabs": "multiple", // Always show tabs
+    "workbench.activityBar.visible": true, // Show the left activity bar
+    "workbench.statusBar.visible": true, // Show the bottom status bar
+    "workbench.tree.indent": 12, // Indentation for tree views (explorer)
     "window.menuBarVisibility": "toggle",
+
+    // --- Search ---
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/.venv": true, // Exclude virtual environments from search
+        "**/.git": true,
+        "**/.mypy_cache": true,
+        "**/.pytest_cache": true,
+        "**/__pycache__": true
+    },
+    "search.showEditorOnlyFiles": true, // Only show files open in editor
+
+    // --- Telemetry (Privacy) ---
+    "telemetry.telemetryLevel": "off", // Disable telemetry for privacy
+    "extensions.autoUpdate": "true", // Auto-update extensions
+    "extensions.autoCheckUpdates": true, // Check for updates automatically
+
+    // --- Terminal ---
+    "terminal.integrated.defaultProfile.linux": "bash", // Or "zsh", "fish" if you use them
+    "terminal.integrated.fontSize": 13, // Terminal font size
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.copyOnSelection": true,
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "terminal.integrated.cursorStyle": "block",
+    "terminal.integrated.env.linux": {
+        // Example: Add your pyenv shims to PATH if you use pyenv globally
+        // "PATH": "/home/youruser/.pyenv/shims:${env:PATH}"
+    },
+    "terminal.integrated.scrollback": 10000, // Large scrollback buffer
+
+    // --- Git (VS Code's built-in Git integration) ---
+    "git.autofetch": true, // Automatically fetch from remotes
+    "git.confirmSync": false, // Don't ask before syncing
+    "git.enableCommitSigning": true, // Enable GPG commit signing
+    "git.decorations.enabled": true, // Show git status in explorer
+    "git.branchProtection": ["main", "master", "develop"], // Protect main branches
+    "git.untrackedChanges": "separate", // Show untracked changes separately
+
     "[html]": {
         "editor.tabSize": 2,
         "editor.insertSpaces": true,
@@ -46,8 +110,5 @@
         "editor.codeActionsOnSave": {
             "source.organizeImports": "explicit"
         }
-    },
-    "editor.fontFamily": "'Mononoki Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
-    "containers.containerClient": "com.microsoft.visualstudio.containers.podman",
-    "dev.containers.dockerPath": "podman"
+    }
 }
