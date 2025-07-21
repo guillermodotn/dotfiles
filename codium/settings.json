@@ -30,8 +30,7 @@
     "window.autoDetectColorScheme": true,
     "workbench.iconTheme": "vs-minimal", // Or your favorite icon theme
     "workbench.startupEditor": "none", // Open VS Code with no active editor
-    "workbench.editor.showTabs": "multiple", // Always show tabs
-    "workbench.activityBar.visible": true, // Show the left activity bar
+    "workbench.editor.showTabs": "multiple", // Show the left activity bar
     "workbench.statusBar.visible": true, // Show the bottom status bar
     "workbench.tree.indent": 12, // Indentation for tree views (explorer)
     "window.menuBarVisibility": "toggle",
@@ -68,47 +67,153 @@
     // --- Git (VS Code's built-in Git integration) ---
     "git.autofetch": true, // Automatically fetch from remotes
     "git.confirmSync": false, // Don't ask before syncing
-    "git.enableCommitSigning": true, // Enable GPG commit signing
+    "git.enableCommitSigning": false, // Enable GPG commit signing
     "git.decorations.enabled": true, // Show git status in explorer
     "git.branchProtection": ["main", "master", "develop"], // Protect main branches
     "git.untrackedChanges": "separate", // Show untracked changes separately
 
+    // --- HTML specific editor settings ---
     "[html]": {
-        "editor.tabSize": 2,
-        "editor.insertSpaces": true,
-        "editor.formatOnSave": true,
-        "editor.rulers": [120],
-        "editor.wordWrapColumn": 120
-    },
-    "[markdown]": {
-        "editor.wordWrap": "wordWrapColumn",
-        "editor.wordWrapColumn": 120,
-        "editor.rulers": [120]
-    },
-    "[yaml]": {
-        "editor.insertSpaces": true,             // Use spaces instead of tabs
-        "editor.tabSize": 2,                     // Set tab size to 2 spaces
-        "editor.formatOnSave": true,             // Auto-format YAML files on save
-        "editor.autoIndent": "full",             // Enable full auto-indentation
-        "editor.rulers": [80],                   // Show a vertical ruler at 80 characters
-        "editor.wordWrap": "wordWrapColumn",     // Enable word wrapping at the ruler
-        "editor.wordWrapColumn": 80              // Wrap lines at 80 characters
-    },
-    "yaml.schemas": {
-        "https://json.schemastore.org/github-workflow.json": "/*.github/workflows/*",   // Associate GitHub Actions workflows
-        "https://json.schemastore.org/dependabot-v2.json": "dependabot.yml"             // Dependabot configuration
-    },
-    "yaml.format.enable": true,                // Enable YAML formatting
-    "yaml.validate": true,                     // Enable YAML validation
-    "yaml.lint.onSave": true,                  // Lint YAML files on save
-    "[python]": {
-        "editor.formatOnSave": true,            // Automatically format code on save
-        "editor.insertSpaces": true,            // Use spaces instead of tabs
-        "editor.tabSize": 4,                    // Set tab size to 4 (PEP 8 standard)
-        "editor.wordWrap": "off",    // Disable word wrap for better readability
-        "editor.rulers": [72, 79],              // Highlight 72 for docstrings, 79 for code
+        "editor.tabSize": 2,                    // Common for HTML, often 2 spaces for indentation
+        "editor.insertSpaces": true,            // Always use spaces instead of tabs
+        "editor.wordWrap": "on",                // Wrap long lines for better readability
+        "editor.defaultFormatter": "esbenp.prettier-vscode", // Set Prettier as the default formatter for HTML
+        "editor.formatOnSave": true,            // Automatically format HTML on save
         "editor.codeActionsOnSave": {
-            "source.organizeImports": "explicit"
+            "source.fixAll.eslint": "explicit", // If you use ESLint for HTML (e.g., with Preact/React)
+            "source.fixAll.stylelint": "explicit" // If you use Stylelint for CSS within HTML
         }
+    },
+
+    // --- Global Prettier settings (if you use Prettier for other languages too) ---
+    // These apply to all files Prettier supports unless overridden by language-specific settings or .prettierrc
+    // Ensure you have "esbenp.prettier-vscode" extension installed.
+    "prettier.tabWidth": 2,
+    "prettier.singleQuote": false,             // Use double quotes for HTML attributes (common)
+    "prettier.htmlWhitespaceSensitivity": "css", // How Prettier handles whitespace in HTML
+    "prettier.bracketSameLine": false,         // Put > on a new line (e.g., for React/JSX)
+    "prettier.printWidth": 120,                // Adjust print width for HTML as needed
+
+    "[markdown]": {
+        "editor.rulers": [80],
+        "editor.wordWrap": "on",                // Essential: Wrap lines to fit the editor width
+        "editor.wordWrapColumn": 80,            // Optional: Wrap at a specific column (e.g., 80 for prose)
+                                                // If "editor.wordWrap" is "on", this sets the preferred wrapping column.
+                                                // If "editor.wordWrap" is "wordWrapColumn", it forces wrapping at this column.
+        "editor.wrappingIndent": "same",        // Indent wrapped lines to align with the start of the original line
+        "editor.tabSize": 2,                    // Common for Markdown, but 4 is also fine if you prefer consistency
+        "editor.insertSpaces": true,            // Always use spaces for indentation
+        "editor.renderWhitespace": "none",      // Usually not needed for Markdown unless debugging spacing
+        "editor.defaultFormatter": "esbenp.prettier-vscode", // Set Prettier as default formatter (install extension below)
+        "editor.formatOnSave": true,            // Automatically format Markdown on save
+
+        // Disable quick suggestions for strings and comments in Markdown
+        // This can prevent unwanted pop-ups when writing prose.
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        }
+    },
+    // --- YAML specific editor settings ---
+    "[yaml]": {
+        "editor.tabSize": 2,                    // YAML standard: 2 spaces for indentation
+        "editor.insertSpaces": true,            // Always use spaces
+        "editor.detectIndentation": false,      // Prevent VS Code from auto-detecting and overriding 2-space rule
+        "editor.wordWrap": "on",                // Wrap long lines for readability
+        "editor.defaultFormatter": "redhat.vscode-yaml", // Set Red Hat YAML as the default formatter
+        "editor.formatOnSave": true,            // Automatically format YAML on save
+        "editor.codeActionsOnSave": {
+            "source.fixAll.yaml": "explicit"    // Apply any YAML-specific auto-fixes on save
+        }
+    },
+    // --- Global settings for the Red Hat YAML extension ---
+    // (Ensure you have the "YAML" extension by Red Hat installed)
+    "yaml.validate": true,                      // Enable schema validation for YAML files
+    "yaml.format.enable": true,                 // Enable formatting provided by the extension
+    "yaml.completion": true,                    // Enable auto-completion suggestions
+    "yaml.hover": true,                         // Show hover information for YAML properties
+    "yaml.schemas": {                           // Configure schema associations for validation and autocompletion
+        // Example: Schema for Kubernetes deployments
+        "kubernetes": "/*.yaml", // This is a very broad match, use more specific paths if possible
+        // "kubernetes": ["/path/to/my/k8s-manifests/*.yaml"], // More specific for Kubernetes
+
+        // Example: Schema for Docker Compose files
+        "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json": "docker-compose*.y(a)ml",
+
+        // Example: Schema for Ansible playbooks (already included via Ansible extension, but good to know)
+        "https://raw.githubusercontent.com/ansible/ansible-lint/main/schemas/ansible.json": "*.y(a)ml", // Broad match for all YAML
+        // "https://raw.githubusercontent.com/ansible/ansible-lint/main/schemas/ansible.json": "**/playbooks/*.y(a)ml", // More specific to playbooks folder
+
+        // Add more schemas as needed for other tools (e.g., GitHub Actions, GitLab CI, Azure Pipelines)
+        // "https://json.schemastore.org/github-workflow.json": ".github/workflows/*.y(a)ml",
+        // "https://json.schemastore.org/gitlab-ci.json": ".gitlab-ci.y(a)ml"
+    },
+    "yaml.customTags": [                        // Add custom YAML tags if your projects use them
+        "!include scalar",
+        "!env_var sequence"
+    ],
+    "yaml.lint.enabled": true,                  // Enable linting for YAML files
+    "yaml.lint.yamllint.enabled": true,         // Use yamllint for linting (requires yamllint installed on your system)
+    "yaml.lint.yamllint.path": "/usr/bin/yamllint", // Path to your yamllint executable (adjust if different)
+
+
+    // This section contains settings specific to Python files
+    "[python]": {
+        // --- Formatting and Linting (using Ruff) ---
+        "editor.defaultFormatter": "ms-python.ruff", // Explicitly set Ruff as the default formatter for Python files
+        "python.formatting.provider": "ruff",       // Tell the Python extension to use Ruff for formatting
+        "python.linting.enabled": true,             // Enable linting to catch errors and style issues
+        "python.linting.provider": "ruff",          // Tell the Python extension to use Ruff for linting
+
+        // Automatically apply Ruff's fixable issues (including formatting) on save.
+        // "explicit" means it runs on explicit saves (Ctrl+S), not just auto-saves.
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit", // For auto-organizing imports (e.g., with isort, often integrated by Ruff)
+            "source.fixAll.ruff": "explicit"      // For Ruff's auto-fixable linting and formatting issues
+        },
+
+        // --- Language Server (Pylance for advanced IntelliSense and type checking) ---
+        "python.languageServer": "Pylance",
+        "python.analysis.typeCheckingMode": "basic", // Set type checking mode: "off", "basic", or "strict"
+                                                     // "basic" is a good starting point, "strict" for more rigor.
+
+        // --- Interpreter and Virtual Environment Management (Crucial for DevOps) ---
+        // This tells VS Code where to find your Python interpreter.
+        // For DevOps, you'll almost always be working within virtual environments.
+        // Choose ONE of the following options based on your workflow:
+
+        // Option 1 (Recommended for most projects): Point to a project-local .venv
+        // This assumes you create a '.venv' directory in your project root (e.g., using `uv venv` or `python -m venv .venv`).
+        // "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+
+        // Option 2: If you use a centralized virtual environment manager like virtualenvwrapper
+        // Replace 'my_project_venv' with the actual name of your virtual environment.
+        // "python.defaultInterpreterPath": "/home/youruser/.virtualenvs/my_project_venv/bin/python",
+
+        // Option 3: Let VS Code auto-detect (works well if .venv is in project root and you use uv)
+        // If left empty, VS Code will try to find a virtual environment in common locations.
+        "python.defaultInterpreterPath": "",
+
+        // Automatically activate the detected virtual environment in new integrated terminals.
+        "python.terminal.activateEnvironment": true,
+
+        // --- Testing ---
+        // Configure your preferred testing framework. Pytest is very common in DevOps.
+        "python.testing.pytestEnabled": true,          // Enable pytest integration
+        "python.testing.unittestEnabled": false,       // Disable unittest if you're using pytest
+        "python.testing.autoTestDiscoverOnSaveEnabled": true, // Automatically discover tests when files are saved
+
+        // --- Other useful settings ---
+        // Show docstrings on hover
+        "python.analysis.completeFunctionParens": true,
+        "python.analysis.addImportOnTypeCompletion": true,
+        "editor.rulers": [72, 79], // Highlight 72 for docstrings, 79 for code
+
+        // If you need to pass specific arguments to Ruff (less common if using pyproject.toml)
+        // It's generally better to manage Ruff rules in your project's pyproject.toml for consistency.
+        // "ruff.args": ["--line-length=79", "--select", "E,F,W,I"], // Example: enforce specific rules
+        // "ruff.lint.args": [],
+        // "ruff.format.args": []
     }
 }
