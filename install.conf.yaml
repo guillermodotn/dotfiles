@@ -11,30 +11,48 @@
 - clean: ['~']
 
 - link:
+    #### nvim config ###
+    ~/.config/nvim/init.lua: nvim/init.lua
+    ~/.config/nvim/lua: nvim/lua/
+    ~/.vim: vim # Vanilla vim
+
+    #### Bash config ####
     ~/.bashrc.d/aliases.sh: bashrc.d/aliases.sh
     ~/.bashrc.d/prompt.sh: bashrc.d/prompt.sh
-    ~/.bashrc.d/git-completion.bash: bashrc.d/git-completion.bash
+    #~/.bashrc.d/git-completion.bash: bashrc.d/git-completion.bash
     ~/.bashrc.d/history.sh: bashrc.d/history.sh
     #~/.bashrc.d/auto-tmux-session.sh: bashrc.d/auto-tmux-session.sh
     #~/.bashrc: bashrc
-    #~/.config/alacritty: alacritty
-    #~/.config/conky: conky
-    ~/.config/lsd: lsd/
-    ~/.config/git: git/
-    ~/.config/mpv: mpv/
-    ~/.config/bpytop/bpytop.conf: bpytop/bpytop.conf
-    ~/.config/btop/btop.conf: btop/btop.conf
-    #~/.config/kitty: kitty
-    #~/.config/qtile: qtile
-    ~/.vim: vim
-    ~/.config/nvim/init.lua: nvim/init.lua
+
+    #### Zsh config ####
     #~/.zshrc: zshrc
     #~/.oh-my-zsh: oh-my-zsh
     #~/.zprofile: zprofile
-    ~/.tmux.conf: tmux.conf
-    ~/.config/bpython/config: bpython/config
     #~/.zshenv: zshenv
-    #~/.config/VSCodium/User/settings.json: codium/settings.json
-    ~/.config/Code/User/settings.json: codium/settings.json
+    
+    #### Terminal Emulators ####
+    #~/.config/alacritty: alacritty
+    #~/.config/kitty: kitty
+    ~/.tmux.conf: tmux.conf # Tmux multiplexer
+
+    #### Python configs ####
     ~/.config/uv/uv.toml: uv/uv.toml
     ~/.config/pip/pip.conf: pip/pip.conf
+    ~/.config/bpython/config: bpython/config
+    ~/.config/bpytop/bpytop.conf: bpytop/bpytop.conf
+
+    #### Tools ####
+    ~/.config/mpv: mpv/
+    ~/.config/btop/btop.conf: btop/btop.conf
+    #~/.config/conky: conky
+    ~/.config/lsd: lsd/
+
+    #### Qtile ####
+    #~/.config/qtile: qtile
+    
+    #### Git vcs ####
+    #~/.config/git: git/
+
+    #### Codium/VScode ####
+    #~/.config/VSCodium/User/settings.json: codium/settings.json
+    ~/.config/Code/User/settings.json: codium/settings.json
