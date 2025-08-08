@@ -7,6 +7,7 @@ vim.g.mapleader = " "
 
 -- Line numbers
 vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- Tab & indentation
 vim.opt.tabstop = 4
@@ -35,4 +36,3 @@ vim.lsp.enable('pyright')
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('rpmspec')
 
->>>>>>> Stashed changes
