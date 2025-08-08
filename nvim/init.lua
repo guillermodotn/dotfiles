@@ -1,6 +1,7 @@
 require("intro")
 require("pm_lazy")
 require("completion_config")
+require("ff_telescope")
 
 -- Set leader key
 vim.g.mapleader = " "

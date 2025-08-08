@@ -38,7 +38,13 @@ require("lazy").setup({
     { 'hrsh7th/vim-vsnip' },
 
     -- Vim practice
-    { 'ThePrimeagen/vim-be-good' }
+    { 'ThePrimeagen/vim-be-good' },
+
+    -- Fuzzy finder (Telescope)
+    {
+    'nvim-telescope/telescope.nvim', tag = '0.1.8',
+      dependencies = { 'nvim-lua/plenary.nvim' }
+    }
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
