@@ -10,6 +10,9 @@ vim.g.mapleader = " "
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+-- Scrolloff
+vim.opt.scrolloff = 10
+
 -- Tab & indentation
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -27,6 +30,8 @@ vim.opt.clipboard = "unnamedplus"
 
 -- Keybindings example: jj to escape insert mode
 vim.keymap.set("i", "jj", "<Esc>")
+vim.keymap.set("n", "<C-D>", "<C-D>zz")
+vim.keymap.set("n", "<C-U>", "<C-U>zz")
 
 -- Set cursor column & line
 vim.opt.cursorcolumn = true
