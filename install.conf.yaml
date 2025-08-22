@@ -18,6 +18,7 @@
 
     #### Bash config ####
     ~/.bashrc.d/aliases.sh: bashrc.d/aliases.sh
+    ~/.bashrc.d/env-var.sh: bashrc.d/env-var.sh
     ~/.bashrc.d/prompt.sh: bashrc.d/prompt.sh
     #~/.bashrc.d/git-completion.bash: bashrc.d/git-completion.bash
     ~/.bashrc.d/history.sh: bashrc.d/history.sh
