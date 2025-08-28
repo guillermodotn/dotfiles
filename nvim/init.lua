@@ -41,4 +41,12 @@ vim.opt.cursorline = true
 vim.lsp.enable('pyright')
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('rpmspec')
+vim.lsp.enable('docker_language_server')
 
+
+-- Makeprs
+-- vim.opt.makeprg = "uv run % &*"
+vim.api.nvim_create_autocmd({'BufEnter'}, {
+  pattern = {'*.py',},
+  command = 'lua vim.opt.makeprg = "uv run % "',
+})
