@@ -1,5 +1,9 @@
 #!/bin/sh
 
+#### Attention ###
+# Make sure this file gets sourced first.
+# So others can make use of the vars.
+
 # Check for nvim, vim and vi and set the default editor.
 if command -v nvim &> /dev/null; then
     export EDITOR=nvim
