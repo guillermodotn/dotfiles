@@ -13,16 +13,16 @@
 - link:
     #### nvim config ###
     ~/.config/nvim/init.lua: nvim/init.lua
-    ~/.config/nvim/lua: nvim/lua/
-    ~/.vim: vim # Vanilla vim
+    #~/.config/nvim/lua: nvim/lua/
+    #~/.vim: vim # Vanilla vim
 
     #### Bash config ####
     ~/.bashrc.d/aliases.sh: bashrc.d/aliases.sh
-    ~/.bashrc.d/env-var.sh: bashrc.d/env-var.sh
+    ~/.bashrc.d/_env-vars.sh: bashrc.d/env-vars.sh # `_` helps to make it the first in been sourced
     ~/.bashrc.d/prompt.sh: bashrc.d/prompt.sh
     #~/.bashrc.d/git-completion.bash: bashrc.d/git-completion.bash
     ~/.bashrc.d/history.sh: bashrc.d/history.sh
-    #~/.bashrc.d/auto-tmux-session.sh: bashrc.d/auto-tmux-session.sh
+    ~/.bashrc.d/tmux-auto-init.sh: bashrc.d/tmux-auto-init.sh
     #~/.bashrc: bashrc
 
     #### Zsh config ####
