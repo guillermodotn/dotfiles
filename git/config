@@ -1,7 +1,11 @@
 [init]
 	defaultBranch = main
 [core]
-	editor = code -w
+	editor = nvim
 [user]
 	name = guillermodotn
 	email = guillerm0.n@outlook.es
+	
+[includeIf "gitdir:~/repos/work/"]
+	path = ~/.config/git/config-redhat
+

@@ -8,7 +8,7 @@
       create: true
       ignore-missing: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - link:
     #### nvim config ###
@@ -30,7 +30,7 @@
     #~/.oh-my-zsh: oh-my-zsh
     #~/.zprofile: zprofile
     #~/.zshenv: zshenv
-    
+
     #### Terminal Emulators ####
     #~/.config/alacritty: alacritty
     #~/.config/kitty: kitty
@@ -50,9 +50,9 @@
 
     #### Qtile ####
     #~/.config/qtile: qtile
-    
+
     #### Git vcs ####
-    #~/.config/git: git/
+    ~/.config/git: git/
 
     #### Codium/VScode ####
     #~/.config/VSCodium/User/settings.json: codium/settings.json
