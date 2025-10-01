@@ -57,3 +57,11 @@
     #### Codium/VScode ####
     #~/.config/VSCodium/User/settings.json: codium/settings.json
     ~/.config/Code/User/settings.json: codium/settings.json
+
+- create:
+    ~/.tmux/plugins/tpm:
+      mode: 0755
+
+- shell:
+    # You must run C-b + I for tmux plugins to be install
+    - [git clone --depth 1 --single-branch https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm]
