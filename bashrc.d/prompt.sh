@@ -14,6 +14,23 @@ if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
     source /usr/share/git-core/contrib/completion/git-prompt.sh
 fi
 
+# PROMPT_COMMAND executes before displaying the prompt, allowing us to save $?.
+PROMPT_COMMAND='export LAST_EXIT_CODE=$?'
+
+prompt_status() {
+    
+    # Check the return code of the last command ($?)
+    if [ $LAST_EXIT_CODE -eq 0 ]; then
+        # Success (Bold Green)
+	ICON_COLOR=32
+    else
+	# Failure (Bold Red)
+	ICON_COLOR=31
+    fi
+
+    echo -e "\e[1;${ICON_COLOR}m\e[0m"
+}
+
 # Prompt
-PS1="${USER_COLOR}\u${RESET_COLOR}@${HOST_COLOR}\h ${DIR_COLOR}\w${GIT_COLOR}\$(__git_ps1 ' (%s)')${RESET_COLOR}\$ "
+PS1="\$(prompt_status '(%s) ')  ${DIR_COLOR}\w${GIT_COLOR}\$(__git_ps1 ' 󰊢 (%s)')${RESET_COLOR}\$ "
 
