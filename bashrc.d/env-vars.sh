@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-#### Attention ###
+# WARNING: source first
 # Make sure this file gets sourced first.
 # So others can make use of the vars.
 

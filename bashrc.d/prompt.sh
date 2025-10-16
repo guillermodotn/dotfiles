@@ -3,34 +3,44 @@
 GIT_PS1_SHOWDIRTYSTATE=1
 
 # Colors
-USER_COLOR='\[\e[1;32m\]'   # Bold green
-HOST_COLOR='\[\e[1;34m\]'   # Bold blue
-DIR_COLOR='\[\e[1;36m\]'    # Bold cyan
-GIT_COLOR='\[\e[0;33m\]'    # Yellow
-RESET_COLOR='\[\e[0m\]'
+COLOR_RED='\[\e[1;31m\]'	# Bold red
+COLOR_GREEN='\[\e[1;32m\]'	# Bold green
+COLOR_BLUE='\[\e[1;34m\]'	# Bold blue
+COLOR_PURPLE='\[\e[1;35m\]'	# Bold purple
+COLOR_CYAN='\[\e[1;36m\]'	# Bold cyan
+COLOR_YELLOW='\[\e[0;33m\]'	# Yellow
+COLOR_RESET='\[\e[0m\]'
 
 # Git branch support
 if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
     source /usr/share/git-core/contrib/completion/git-prompt.sh
 fi
 
-# PROMPT_COMMAND executes before displaying the prompt, allowing us to save $?.
-PROMPT_COMMAND='export LAST_EXIT_CODE=$?'
-
-prompt_status() {
-    
-    # Check the return code of the last command ($?)
-    if [ $LAST_EXIT_CODE -eq 0 ]; then
-        # Success (Bold Green)
-	ICON_COLOR=32
+_prompt_dir() {
+    if [ "$PWD" = "$HOME" ]; then
+        printf " "
     else
-	# Failure (Bold Red)
-	ICON_COLOR=31
+        printf "\w"
     fi
-
-    echo -e "\e[1;${ICON_COLOR}m\e[0m"
 }
 
-# Prompt
-PS1="\$(prompt_status '(%s) ')  ${DIR_COLOR}\w${GIT_COLOR}\$(__git_ps1 ' 󰊢 (%s)')${RESET_COLOR}\$ "
+_get_prompt_arrow() {
+    local EXIT_CODE="$1"
+    
+    if [ "$EXIT_CODE" -eq 0 ]; then
+        # INFO: The raw symbol '' is printed in bold green
+        printf "%s%s" "$COLOR_GREEN" "$COLOR_RESET"
+    else
+        # INFO: Bold Red Arrow 
+        printf "%s%s" "$COLOR_RED" "$COLOR_RESET"
+    fi
+}
 
+
+PROMPT_COMMAND='
+	LAST_EXIT_CODE=$?;
+	PROMPT_ARROW=$(_get_prompt_arrow "$LAST_EXIT_CODE");
+	PROMPT_DIR=$(_prompt_dir);
+	PROMPT_GIT=$(__git_ps1 " 󰊢 (%s)");
+	PS1="${COLOR_CYAN}${PROMPT_DIR}${COLOR_RESET}${COLOR_YELLOW}${PROMPT_GIT}${COLOR_RESET} ${PROMPT_ARROW} ";
+'

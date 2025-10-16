@@ -9,4 +9,4 @@ bind '"\e[B": history-search-forward'
 export HISTSIZE=5000
 export HISTFILESIZE=10000
 export HISTCONTROL=ignoredups:erasedups
-export HISTIGNORE="ls:bg:fg:history"
+export HISTIGNORE="ls:bg:fg:history:ll:clear:c:la:lsd"
