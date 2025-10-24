@@ -31,7 +31,10 @@ font-size = 16
 window-decoration = none
 fullscreen = false
 maximize = true
-theme = "TokyoNight"
+theme = dark:"TokyoNight Moon",light:"TokyoNight Day"
+mouse-hide-while-typing = true
+# Close without confirmation
+confirm-close-surface = false
 #
 # # Spacing around the equals sign does not matter.
 # # All of these are identical:
