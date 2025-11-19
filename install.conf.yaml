@@ -1,4 +1,4 @@
-# Installation command
+# INFO: Installation command
 # dotbot -c install.conf.yaml
 
 - defaults:
@@ -23,6 +23,7 @@
     #~/.bashrc.d/git-completion.bash: bashrc.d/git-completion.bash
     ~/.bashrc.d/history.sh: bashrc.d/history.sh
     ~/.bashrc.d/tmux-auto-init.sh: bashrc.d/tmux-auto-init.sh
+    ~/.bashrc.d/editing-mode.sh: bashrc.d/editing-mode.sh
     #~/.bashrc: bashrc
 
     #### Zsh config ####
@@ -34,6 +35,7 @@
     #### Terminal Emulators ####
     #~/.config/alacritty: alacritty
     #~/.config/kitty: kitty
+    ~/.config/ghostty: ghostty
     ~/.tmux.conf: tmux.conf # Tmux multiplexer
 
     #### Python configs ####
@@ -64,4 +66,5 @@
 
 - shell:
     # You must run C-b + I for tmux plugins to be install
-    - [git clone --depth 1 --single-branch https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm]
+    - command: test ! -d ~/.tmux/plugins/tpm && git clone --depth 1 --single-branch https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+      description: Installing TMUX tpm (tmux plugin manager)
