@@ -31,7 +31,7 @@ font-size = 16
 window-decoration = none
 fullscreen = false
 maximize = true
-theme = dark:"TokyoNight Moon",light:"TokyoNight Day"
+theme = "Earthsong"
 mouse-hide-while-typing = true
 # Close without confirmation
 confirm-close-surface = false
