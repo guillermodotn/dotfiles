@@ -207,7 +207,8 @@ return {
 			-- clangd = {},
 			gopls = {},
 			pyright = {},
-			yamllint = {},
+			ansiblels = {},
+			yamlls = {},
 			ruff = {},
 			rpm_lsp_server = {},
 			docker_language_server = {},
@@ -253,6 +254,7 @@ return {
 		local ensure_installed = vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
 			"stylua", -- Used to format Lua code
+			"ansible-lint",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
