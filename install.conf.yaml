@@ -42,11 +42,11 @@
     ~/.config/uv/uv.toml: uv/uv.toml
     ~/.config/pip/pip.conf: pip/pip.conf
     ~/.config/bpython/config: bpython/config
-    ~/.config/bpytop/bpytop.conf: bpytop/bpytop.conf
+    ~/.config/bpytop: bpytop
 
     #### Tools ####
     ~/.config/mpv: mpv/
-    ~/.config/btop/btop.conf: btop/btop.conf
+    ~/.config/btop: btop/
     #~/.config/conky: conky
     ~/.config/lsd: lsd/
 
