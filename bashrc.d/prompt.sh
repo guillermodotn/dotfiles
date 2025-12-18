@@ -36,11 +36,26 @@ _get_prompt_arrow() {
     fi
 }
 
+# New function to get the Python venv name
+_get_venv() {
+    if [ -n "$VIRTUAL_ENV" ]; then
+        # Use the custom prompt if set, otherwise the folder name
+        local name=$(basename "$VIRTUAL_ENV")
+        if [ -n "$VIRTUAL_ENV_PROMPT" ]; then
+            name="$VIRTUAL_ENV_PROMPT"
+        fi
+        # Cleans up parentheses if they are already in the string
+        name=${name//[()]/}
+        printf "%s(%s) %s" "$COLOR_PURPLE" "$name" "$COLOR_RESET"
+    fi
+}
+
 
 PROMPT_COMMAND='
 	LAST_EXIT_CODE=$?;
 	PROMPT_ARROW=$(_get_prompt_arrow "$LAST_EXIT_CODE");
 	PROMPT_DIR=$(_prompt_dir);
 	PROMPT_GIT=$(__git_ps1 " 󰊢 (%s)");
-	PS1="${COLOR_CYAN}${PROMPT_DIR}${COLOR_RESET}${COLOR_YELLOW}${PROMPT_GIT}${COLOR_RESET} ${PROMPT_ARROW} ";
+    PROMPT_VENV=$(_get_venv);
+	PS1="${PROMPT_VENV}${COLOR_CYAN}${PROMPT_DIR}${COLOR_RESET}${COLOR_YELLOW}${PROMPT_GIT}${COLOR_RESET} ${PROMPT_ARROW} ";
 '
