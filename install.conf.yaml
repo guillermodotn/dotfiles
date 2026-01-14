@@ -60,11 +60,12 @@
     #~/.config/VSCodium/User/settings.json: codium/settings.json
     ~/.config/Code/User/settings.json: codium/settings.json
 
-- create:
-    ~/.tmux/plugins/tpm:
-      mode: 0755
+## No needed as clone creates the repo
+# - create:
+#     ~/.tmux/plugins/tpm:
+#       mode: 0755
 
 - shell:
     # You must run C-b + I for tmux plugins to be install
-    - command: test ! -d ~/.tmux/plugins/tpm && git clone --depth 1 --single-branch https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    - command: test -d ~/.tmux/plugins/tpm || git clone --depth 1 --single-branch https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
       description: Installing TMUX tpm (tmux plugin manager)
