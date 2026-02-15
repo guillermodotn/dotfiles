@@ -1,0 +1,111 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  
+  "model": "kimi/kimi-k2-5-free",
+  "small_model": "kimi/kimi-k2-5-free",
+  
+  "provider": {
+    "kimi": {
+      "options": {
+        "timeout": 600000
+      }
+    }
+  },
+  
+  "theme": "earthsong",
+  
+  "keybinds": {
+    "sidebar_toggle": "ctrl+b",
+    "scrollbar_toggle": "none",
+    "status_view": "ctrl+x s",
+    "tool_details": "ctrl+x d"
+  },
+  
+  "tui": {
+    "scroll_speed": 5,
+    "scroll_acceleration": {
+      "enabled": true
+    },
+    "diff_style": "auto"
+  },
+  
+  "permission": {
+    "bash": "ask",
+    "write": "ask"
+  },
+  
+  "command": {
+    "test": {
+      "template": "Run the full test suite with coverage report and show any failures. Focus on the failing tests and suggest fixes.",
+      "description": "Run tests with coverage"
+    },
+    "commit": {
+      "template": "Generate a concise commit message for the current changes. Analyze the git diff to understand what was changed and why.",
+      "description": "Generate commit message"
+    },
+    "lint": {
+      "template": "Run the project's linter and fix any issues. If no lint command exists, analyze the code for common issues.",
+      "description": "Run linter and fix issues"
+    },
+    "component": {
+      "template": "Create a new component named $ARGUMENTS with proper TypeScript typing and basic structure. Follow the project's component patterns.",
+      "description": "Create a new component"
+    },
+    "explain": {
+      "template": "Explain the code in $ARGUMENTS. Break down how it works, what it does, and identify any potential issues or improvements.",
+      "description": "Explain code"
+    }
+  },
+  
+  "agent": {
+    "reviewer": {
+      "description": "Code reviewer agent",
+      "model": "kimi/kimi-k2-5-free",
+      "prompt": "You are a code reviewer. Focus on security, performance, maintainability, and best practices. Provide actionable feedback and suggest improvements.",
+      "tools": {
+        "write": false,
+        "edit": false
+      }
+    },
+    "refactor": {
+      "description": "Refactoring specialist",
+      "model": "kimi/kimi-k2-5-free",
+      "prompt": "You are a refactoring specialist. Focus on improving code quality, reducing complexity, and making the code more maintainable while preserving functionality."
+    },
+    "docs": {
+      "description": "Documentation writer",
+      "model": "kimi/kimi-k2-5-free",
+      "prompt": "You are a technical documentation writer. Create clear, concise documentation that explains the code's purpose, usage, and any important considerations."
+    }
+  },
+  
+  "watcher": {
+    "ignore": [
+      "node_modules/**",
+      "dist/**",
+      ".git/**",
+      "*.log",
+      ".env*",
+      "coverage/**",
+      "build/**",
+      "tmp/**",
+      ".cache/**"
+    ]
+  },
+  
+  "compaction": {
+    "auto": true,
+    "prune": true,
+    "reserved": 10000
+  },
+  
+  "autoupdate": "notify",
+  
+  "share": "manual",
+  
+  "instructions": [],
+  
+  "disabled_providers": [],
+  
+  "experimental": {}
+}
