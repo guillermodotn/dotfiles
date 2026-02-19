@@ -4,7 +4,7 @@
     "base": "#292520",
     "surface": "#322d27",
     "overlay": "#3c3731",
-    "textMutedNew": "#9a8b7a",
+    "textMuted": "#9a8b7a",
     "text": "#e5c7a9",
     "terracotta": "#ff645a",
     "amber": "#f5ae2e",
@@ -48,7 +48,7 @@
       "light": "base"
     },
     "textMuted": {
-      "dark": "textMutedNew",
+      "dark": "textMuted",
       "light": "overlay"
     },
     "thinking": {
