@@ -51,3 +51,10 @@ require("lazy").setup({
 		},
 	},
 })
+
+-- Auto-sync plugins on startup
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		require("lazy").sync({ wait = false, show = false })
+	end,
+})
