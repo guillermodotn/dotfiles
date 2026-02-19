@@ -12,6 +12,42 @@
     }
   },
   
+  "mcp": {
+    "filesystem": {
+      "type": "local",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-filesystem", "{env:HOME}"],
+      "enabled": true
+    },
+    "github": {
+      "type": "local",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-github"],
+      "enabled": true,
+      "environment": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "{env:GITHUB_PERSONAL_ACCESS_TOKEN}"
+      }
+    },
+    "fetch": {
+      "type": "local",
+      "command": ["uvx", "mcp-server-fetch"],
+      "enabled": true
+    },
+    "memory": {
+      "type": "local",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-memory"],
+      "enabled": true
+    },
+    "docker": {
+      "type": "local",
+      "command": ["uvx", "mcp-server-docker"],
+      "enabled": true
+    },
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "enabled": true
+    }
+  },
+
   "theme": "earthsong",
   
   "keybinds": {
@@ -30,17 +66,21 @@
   },
   
   "permission": {
+    "read": "allow",
+    "glob": "allow",
+    "grep": "allow",
     "bash": "ask",
+    "edit": "ask",
     "write": "ask"
-  },
-  
+  }, 
+
   "command": {
     "test": {
       "template": "Run the full test suite with coverage report and show any failures. Focus on the failing tests and suggest fixes.",
       "description": "Run tests with coverage"
     },
     "commit": {
-      "template": "Generate a concise commit message for the current changes. Analyze the git diff to understand what was changed and why.",
+      "template": "Generate a concise commit message for the current changes. Analyze the git diff to understand what was changed and why. Only output the suggested message, do not create the commit.",
       "description": "Generate commit message"
     },
     "lint": {
@@ -54,13 +94,24 @@
     "explain": {
       "template": "Explain the code in $ARGUMENTS. Break down how it works, what it does, and identify any potential issues or improvements.",
       "description": "Explain code"
+    },
+    "docker": {
+      "template": "Inspect the Docker environment. List running containers, check logs, and debug any issues. If $ARGUMENTS is provided, focus on that specific container or service. Use the docker MCP tools when available.",
+      "description": "Inspect and debug Docker containers"
+    },
+    "venv": {
+      "template": "Set up a Python virtual environment for this project. Use uv if available, otherwise fall back to python -m venv. Install dependencies from requirements.txt, pyproject.toml, or setup.py if present. If $ARGUMENTS is provided, use it as the venv path.",
+      "description": "Set up Python virtual environment"
+    },
+    "deps": {
+      "template": "Analyze Python dependencies for this project. Check for outdated packages, security vulnerabilities, dependency conflicts, and unused imports. Use pip, uv, or pipdeptree as available. Report findings and suggest fixes.",
+      "description": "Analyze Python dependencies"
     }
   },
   
   "agent": {
     "reviewer": {
       "description": "Code reviewer agent",
-      "model": "kimi/kimi-k2-5-free",
       "prompt": "You are a code reviewer. Focus on security, performance, maintainability, and best practices. Provide actionable feedback and suggest improvements.",
       "tools": {
         "write": false,
@@ -69,12 +120,10 @@
     },
     "refactor": {
       "description": "Refactoring specialist",
-      "model": "kimi/kimi-k2-5-free",
       "prompt": "You are a refactoring specialist. Focus on improving code quality, reducing complexity, and making the code more maintainable while preserving functionality."
     },
     "docs": {
       "description": "Documentation writer",
-      "model": "kimi/kimi-k2-5-free",
       "prompt": "You are a technical documentation writer. Create clear, concise documentation that explains the code's purpose, usage, and any important considerations."
     }
   },
@@ -89,21 +138,32 @@
       "coverage/**",
       "build/**",
       "tmp/**",
-      ".cache/**"
+      ".cache/**",
+      "__pycache__/**",
+      ".venv/**",
+      ".mypy_cache/**",
+      ".pytest_cache/**",
+      ".ruff_cache/**",
+      "*.egg-info/**",
+      "*.pyc"
     ]
   },
   
   "compaction": {
     "auto": true,
     "prune": true,
-    "reserved": 10000
+    "reserved": 20000
   },
   
   "autoupdate": "notify",
   
   "share": "manual",
   
-  "instructions": [],
+  "instructions": [
+    "For Python projects, prefer ruff for linting and formatting. Use type hints consistently. Follow PEP 8 conventions.",
+    "When working with Docker, check for existing docker-compose.yml or Dockerfile before suggesting new ones.",
+    "When looking up library documentation, use context7 tools."
+  ],
   
   "disabled_providers": [],
   
