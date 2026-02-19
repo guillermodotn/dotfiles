@@ -24,10 +24,21 @@ vim.o.mouse = "a"
 -- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
 
--- Sync clipboard between OS and Neovim.
---  Schedule the setting after `UiEnter` because it can increase startup-time.
---  Remove this option if you want your OS clipboard to remain independent.
+-- Clipboard: OSC 52 for copy (works through tmux/SSH via terminal escape sequences),
+-- wl-paste for paste (reads Wayland clipboard directly, avoids Ghostty's OSC 52 read block).
 --  See `:help 'clipboard'`
+vim.g.clipboard = {
+	name = "OSC 52",
+	copy = {
+		["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+		["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+	},
+	paste = {
+		["+"] = { "wl-paste", "--no-newline" },
+		["*"] = { "wl-paste", "--no-newline", "--primary" },
+	},
+}
+
 vim.schedule(function()
 	vim.o.clipboard = "unnamedplus"
 end)
