@@ -50,6 +50,10 @@
     #~/.config/conky: conky
     ~/.config/lsd: lsd/
 
+    #### Opencode ####
+    ~/.config/opencode/opencode.json: opencode/opencode.json
+    ~/.config/opencode/themes/earthsong.json: opencode/themes/earthsong.json
+
     #### Qtile ####
     #~/.config/qtile: qtile
 
