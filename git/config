@@ -9,3 +9,5 @@
 [includeIf "gitdir:~/repos/work/"]
 	path = ~/.config/git/config-redhat
 
+[merge]
+	tool = nvimdiff1
