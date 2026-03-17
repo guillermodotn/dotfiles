@@ -39,3 +39,6 @@ vim.keymap.set("n", "<C-U>", "<C-U>zz")
 
 -- Open Netrw (Same as :Ex)
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open Netrw" })
+
+-- Tabpage keybindings
+vim.keymap.set("n", "<leader>tt", ":tabnew<CR>", { desc = "New [t]ab" })
