@@ -11,65 +11,42 @@
 - clean: ["~"]
 
 - link:
-    #### nvim config ###
+    #### Neovim ####
     ~/.config/nvim/init.lua: nvim/init.lua
     ~/.config/nvim/lua: nvim/lua/
-    #~/.vim: vim # Vanilla vim
 
-    #### Bash config ####
-    ~/.bashrc.d/aliases.sh: bashrc.d/aliases.sh
+    #### Bash ####
     ~/.bashrc.d/_env-vars.sh: bashrc.d/env-vars.sh # `_` helps to make it the first in been sourced
+    ~/.bashrc.d/aliases.sh: bashrc.d/aliases.sh
     ~/.bashrc.d/prompt.sh: bashrc.d/prompt.sh
-    #~/.bashrc.d/git-completion.bash: bashrc.d/git-completion.bash
     ~/.bashrc.d/history.sh: bashrc.d/history.sh
     ~/.bashrc.d/tmux-auto-init.sh: bashrc.d/tmux-auto-init.sh
     ~/.bashrc.d/editing-mode.sh: bashrc.d/editing-mode.sh
-    #~/.bashrc: bashrc
 
-    #### Zsh config ####
-    #~/.zshrc: zshrc
-    #~/.oh-my-zsh: oh-my-zsh
-    #~/.zprofile: zprofile
-    #~/.zshenv: zshenv
-
-    #### Terminal Emulators ####
-    #~/.config/alacritty: alacritty
-    #~/.config/kitty: kitty
+    #### Terminal ####
     ~/.config/ghostty: ghostty
-    ~/.tmux.conf: tmux.conf # Tmux multiplexer
+    ~/.config/tmux: tmux/
 
-    #### Python configs ####
+    #### Python ####
     ~/.config/uv/uv.toml: uv/uv.toml
     ~/.config/pip/pip.conf: pip/pip.conf
     ~/.config/bpython/config: bpython/config
     ~/.config/bpytop: bpytop
 
     #### Tools ####
-    ~/.config/mpv: mpv/
     ~/.config/btop: btop/
-    #~/.config/conky: conky
     ~/.config/lsd: lsd/
+    ~/.config/mpv: mpv/
+    ~/.config/git: git/
+    ~/.config/Code/User/settings.json: codium/settings.json
+
+    #### Themes (btop alternates) ####
+    ~/.config/themes: themes/
 
     #### Opencode ####
     ~/.config/opencode/opencode.json: opencode/opencode.json
+    ~/.config/opencode/tui.json: opencode/tui.json
+    ~/.config/opencode/themes/tokyonight-storm.json: opencode/themes/tokyonight-storm.json
     ~/.config/opencode/themes/earthsong.json: opencode/themes/earthsong.json
+    ~/.config/opencode/themes/gilded.json: opencode/themes/gilded.json
 
-    #### Qtile ####
-    #~/.config/qtile: qtile
-
-    #### Git vcs ####
-    ~/.config/git: git/
-
-    #### Codium/VScode ####
-    #~/.config/VSCodium/User/settings.json: codium/settings.json
-    ~/.config/Code/User/settings.json: codium/settings.json
-
-## No needed as clone creates the repo
-# - create:
-#     ~/.tmux/plugins/tpm:
-#       mode: 0755
-
-- shell:
-    # You must run C-b + I for tmux plugins to be install
-    - command: test -d ~/.tmux/plugins/tpm || git clone --depth 1 --single-branch https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-      description: Installing TMUX tpm (tmux plugin manager)

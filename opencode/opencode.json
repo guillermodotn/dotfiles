@@ -1,103 +1,91 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  
-  "model": "kimi/kimi-k2-5-free",
-  "small_model": "kimi/kimi-k2-5-free",
-  
-  "provider": {
-    "kimi": {
-      "options": {
-        "timeout": 600000
-      }
-    }
-  },
-  
+
+  "model": "google-vertex-anthropic/claude-opus-4-6@default",
+  "small_model": "google-vertex-anthropic/claude-sonnet-4-6@default",
+
   "mcp": {
-    "filesystem": {
-      "type": "local",
-      "command": ["npx", "-y", "@modelcontextprotocol/server-filesystem", "{env:HOME}"],
-      "enabled": true
-    },
     "github": {
       "type": "local",
       "command": ["npx", "-y", "@modelcontextprotocol/server-github"],
-      "enabled": true,
+      "enabled": false,
       "environment": {
         "GITHUB_PERSONAL_ACCESS_TOKEN": "{env:GITHUB_PERSONAL_ACCESS_TOKEN}"
       }
     },
-    "fetch": {
+    "gitlab": {
       "type": "local",
-      "command": ["uvx", "mcp-server-fetch"],
-      "enabled": true
+      "command": ["uvx", "mcp-gitlab"],
+      "enabled": true,
+      "environment": {
+        "GITLAB_SSL_VERIFY": "false",
+        "GITLAB_TOKEN": "{env:GITLAB_CEE_TOKEN}",
+        "GITLAB_URL": "https://gitlab.cee.redhat.com"
+      }
     },
-    "memory": {
+    "jira": {
       "type": "local",
-      "command": ["npx", "-y", "@modelcontextprotocol/server-memory"],
-      "enabled": true
-    },
-    "docker": {
-      "type": "local",
-      "command": ["uvx", "mcp-server-docker"],
-      "enabled": true
-    },
-    "context7": {
-      "type": "remote",
-      "url": "https://mcp.context7.com/mcp",
-      "enabled": true
+      "command": ["uvx", "mcp-atlassian"],
+      "enabled": true,
+      "environment": {
+        "JIRA_URL": "https://redhat.atlassian.net",
+        "JIRA_USERNAME": "{env:JIRA_USERNAME}",
+        "JIRA_API_TOKEN": "{env:JIRA_API_TOKEN}"
+      }
     }
   },
 
-  "theme": "earthsong",
-  
-  "keybinds": {
-    "sidebar_toggle": "ctrl+b",
-    "scrollbar_toggle": "none",
-    "status_view": "ctrl+x s",
-    "tool_details": "ctrl+x d"
-  },
-  
-  "tui": {
-    "scroll_speed": 5,
-    "scroll_acceleration": {
-      "enabled": true
-    },
-    "diff_style": "auto"
-  },
-  
   "permission": {
     "read": "allow",
     "glob": "allow",
     "grep": "allow",
-    "bash": "ask",
+    "bash": {
+      "*": "ask",
+      "git status*": "allow",
+      "git log*": "allow",
+      "git diff*": "allow",
+      "git branch*": "allow",
+      "grep *": "allow",
+      "rg *": "allow",
+      "uv *": "allow",
+      "ruff *": "allow",
+      "which *": "allow",
+      "ls *": "allow"
+    },
     "edit": "ask",
     "write": "ask"
-  }, 
+  },
+
+  "formatter": {
+    "ruff": {
+      "command": ["uvx", "ruff", "format", "$FILE"],
+      "extensions": [".py", ".pyi"]
+    }
+  },
 
   "command": {
     "test": {
-      "template": "Run the full test suite with coverage report and show any failures. Focus on the failing tests and suggest fixes.",
+      "template": "Run pytest with coverage: `uv run pytest --tb=short -v --cov`. Show all failures with tracebacks and suggest fixes. If no pytest config exists, check for pyproject.toml or setup.cfg.",
       "description": "Run tests with coverage"
     },
     "commit": {
       "template": "Generate a concise commit message for the current changes. Analyze the git diff to understand what was changed and why. Only output the suggested message, do not create the commit.",
-      "description": "Generate commit message"
+      "description": "Generate commit message",
+      "model": "google-vertex-anthropic/claude-sonnet-4-6@default"
     },
     "lint": {
       "template": "Run the project's linter and fix any issues. If no lint command exists, analyze the code for common issues.",
-      "description": "Run linter and fix issues"
-    },
-    "component": {
-      "template": "Create a new component named $ARGUMENTS with proper TypeScript typing and basic structure. Follow the project's component patterns.",
-      "description": "Create a new component"
+      "description": "Run linter and fix issues",
+      "model": "google-vertex-anthropic/claude-sonnet-4-6@default"
     },
     "explain": {
       "template": "Explain the code in $ARGUMENTS. Break down how it works, what it does, and identify any potential issues or improvements.",
       "description": "Explain code"
     },
-    "docker": {
-      "template": "Inspect the Docker environment. List running containers, check logs, and debug any issues. If $ARGUMENTS is provided, focus on that specific container or service. Use the docker MCP tools when available.",
-      "description": "Inspect and debug Docker containers"
+    "pr": {
+      "template": "Generate a GitLab merge request title and description for the current branch changes. Run `git log --oneline main..HEAD` and `git diff main..HEAD --stat` to understand the scope. Output only the MR title and a markdown description with a Summary section and bullet points of key changes. Do not create the MR.",
+      "description": "Generate MR title and description",
+      "model": "google-vertex-anthropic/claude-sonnet-4-6@default"
     },
     "venv": {
       "template": "Set up a Python virtual environment for this project. Use uv if available, otherwise fall back to python -m venv. Install dependencies from requirements.txt, pyproject.toml, or setup.py if present. If $ARGUMENTS is provided, use it as the venv path.",
@@ -108,10 +96,11 @@
       "description": "Analyze Python dependencies"
     }
   },
-  
+
   "agent": {
     "reviewer": {
       "description": "Code reviewer agent",
+      "mode": "subagent",
       "prompt": "You are a code reviewer. Focus on security, performance, maintainability, and best practices. Provide actionable feedback and suggest improvements.",
       "tools": {
         "write": false,
@@ -120,14 +109,16 @@
     },
     "refactor": {
       "description": "Refactoring specialist",
+      "mode": "subagent",
       "prompt": "You are a refactoring specialist. Focus on improving code quality, reducing complexity, and making the code more maintainable while preserving functionality."
     },
     "docs": {
       "description": "Documentation writer",
+      "mode": "subagent",
       "prompt": "You are a technical documentation writer. Create clear, concise documentation that explains the code's purpose, usage, and any important considerations."
     }
   },
-  
+
   "watcher": {
     "ignore": [
       "node_modules/**",
@@ -148,24 +139,21 @@
       "*.pyc"
     ]
   },
-  
+
   "compaction": {
     "auto": true,
     "prune": true,
     "reserved": 20000
   },
-  
+
   "autoupdate": "notify",
-  
+
   "share": "manual",
-  
+
   "instructions": [
     "For Python projects, prefer ruff for linting and formatting. Use type hints consistently. Follow PEP 8 conventions.",
-    "When working with Docker, check for existing docker-compose.yml or Dockerfile before suggesting new ones.",
-    "When looking up library documentation, use context7 tools."
-  ],
-  
-  "disabled_providers": [],
-  
-  "experimental": {}
+    "When running or suggesting test commands, use pytest with uv run (e.g. `uv run pytest`). Prefer pytest fixtures over unittest setUp/tearDown. Use `--tb=short` for readable tracebacks.",
+    "When working with containers, use podman instead of docker. Commands are drop-in compatible (e.g. `podman ps`, `podman build`, `podman-compose`).",
+    "When looking up library documentation, use the webfetch tool with the official docs URL (e.g. docs.python.org, readthedocs.io, pypi.org)."
+  ]
 }

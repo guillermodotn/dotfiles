@@ -4,6 +4,7 @@
     "base": "#292520",
     "surface": "#322d27",
     "overlay": "#3c3731",
+    "subtle": "#8b8278",
     "textMuted": "#9a8b7a",
     "text": "#e5c7a9",
     "terracotta": "#ff645a",
@@ -50,10 +51,6 @@
     "textMuted": {
       "dark": "textMuted",
       "light": "overlay"
-    },
-    "thinking": {
-      "dark": "amber",
-      "light": "clay"
     },
     "background": {
       "dark": "base",
@@ -148,8 +145,8 @@
       "light": "oak"
     },
     "markdownBlockQuote": {
-      "dark": "overlay",
-      "light": "surface"
+      "dark": "subtle",
+      "light": "textMuted"
     },
     "markdownEmph": {
       "dark": "clay",
@@ -160,8 +157,8 @@
       "light": "amber"
     },
     "markdownHorizontalRule": {
-      "dark": "overlay",
-      "light": "surface"
+      "dark": "subtle",
+      "light": "textMuted"
     },
     "markdownListItem": {
       "dark": "sage",
@@ -184,8 +181,8 @@
       "light": "base"
     },
     "syntaxComment": {
-      "dark": "overlay",
-      "light": "surface"
+      "dark": "subtle",
+      "light": "textMuted"
     },
     "syntaxKeyword": {
       "dark": "terracotta",
