@@ -1,0 +1,221 @@
+{
+  "$schema": "https://opencode.ai/theme.json",
+  "defs": {
+    "noir":      "#19160f",
+    "obsidian":  "#201c14",
+    "onyx":      "#28241a",
+    "charcoal":  "#3a362a",
+    "pewter":    "#706858",
+    "silver":    "#c8be9c",
+    "ivory":     "#f0e8d8",
+    "gold":      "#c8a038",
+    "champagne": "#e8782a",
+    "bronze":    "#c06428",
+    "jade":      "#28b870",
+    "crimson":   "#d02848",
+    "sapphire":  "#4888d8",
+    "blush":     "#d07888"
+  },
+  "theme": {
+    "primary": {
+      "dark": "champagne",
+      "light": "bronze"
+    },
+    "secondary": {
+      "dark": "jade",
+      "light": "jade"
+    },
+    "accent": {
+      "dark": "blush",
+      "light": "crimson"
+    },
+    "error": {
+      "dark": "crimson",
+      "light": "crimson"
+    },
+    "warning": {
+      "dark": "bronze",
+      "light": "bronze"
+    },
+    "success": {
+      "dark": "jade",
+      "light": "jade"
+    },
+    "info": {
+      "dark": "sapphire",
+      "light": "sapphire"
+    },
+    "text": {
+      "dark": "ivory",
+      "light": "noir"
+    },
+    "textMuted": {
+      "dark": "pewter",
+      "light": "charcoal"
+    },
+    "background": {
+      "dark": "noir",
+      "light": "ivory"
+    },
+    "backgroundPanel": {
+      "dark": "obsidian",
+      "light": "#ece0c8"
+    },
+    "backgroundElement": {
+      "dark": "onyx",
+      "light": "#e0d4b8"
+    },
+    "border": {
+      "dark": "charcoal",
+      "light": "#c8b888"
+    },
+    "borderActive": {
+      "dark": "gold",
+      "light": "bronze"
+    },
+    "borderSubtle": {
+      "dark": "onyx",
+      "light": "#d8cba8"
+    },
+    "diffAdded": {
+      "dark": "jade",
+      "light": "jade"
+    },
+    "diffRemoved": {
+      "dark": "crimson",
+      "light": "crimson"
+    },
+    "diffContext": {
+      "dark": "charcoal",
+      "light": "pewter"
+    },
+    "diffHunkHeader": {
+      "dark": "charcoal",
+      "light": "pewter"
+    },
+    "diffHighlightAdded": {
+      "dark": "jade",
+      "light": "jade"
+    },
+    "diffHighlightRemoved": {
+      "dark": "crimson",
+      "light": "crimson"
+    },
+    "diffAddedBg": {
+      "dark": "#182820",
+      "light": "#d0e8d8"
+    },
+    "diffRemovedBg": {
+      "dark": "#281018",
+      "light": "#f0d0d8"
+    },
+    "diffContextBg": {
+      "dark": "obsidian",
+      "light": "#ece0c8"
+    },
+    "diffLineNumber": {
+      "dark": "charcoal",
+      "light": "pewter"
+    },
+    "diffAddedLineNumberBg": {
+      "dark": "#102018",
+      "light": "#c8e0d0"
+    },
+    "diffRemovedLineNumberBg": {
+      "dark": "#200810",
+      "light": "#e8c8d0"
+    },
+    "markdownText": {
+      "dark": "ivory",
+      "light": "noir"
+    },
+    "markdownHeading": {
+      "dark": "champagne",
+      "light": "bronze"
+    },
+    "markdownLink": {
+      "dark": "sapphire",
+      "light": "sapphire"
+    },
+    "markdownLinkText": {
+      "dark": "blush",
+      "light": "crimson"
+    },
+    "markdownCode": {
+      "dark": "jade",
+      "light": "jade"
+    },
+    "markdownBlockQuote": {
+      "dark": "pewter",
+      "light": "charcoal"
+    },
+    "markdownEmph": {
+      "dark": "blush",
+      "light": "crimson"
+    },
+    "markdownStrong": {
+      "dark": "champagne",
+      "light": "gold"
+    },
+    "markdownHorizontalRule": {
+      "dark": "charcoal",
+      "light": "pewter"
+    },
+    "markdownListItem": {
+      "dark": "gold",
+      "light": "bronze"
+    },
+    "markdownListEnumeration": {
+      "dark": "champagne",
+      "light": "gold"
+    },
+    "markdownImage": {
+      "dark": "sapphire",
+      "light": "sapphire"
+    },
+    "markdownImageText": {
+      "dark": "blush",
+      "light": "crimson"
+    },
+    "markdownCodeBlock": {
+      "dark": "ivory",
+      "light": "noir"
+    },
+    "syntaxComment": {
+      "dark": "pewter",
+      "light": "pewter"
+    },
+    "syntaxKeyword": {
+      "dark": "champagne",
+      "light": "bronze"
+    },
+    "syntaxFunction": {
+      "dark": "gold",
+      "light": "gold"
+    },
+    "syntaxVariable": {
+      "dark": "ivory",
+      "light": "noir"
+    },
+    "syntaxString": {
+      "dark": "jade",
+      "light": "jade"
+    },
+    "syntaxNumber": {
+      "dark": "blush",
+      "light": "crimson"
+    },
+    "syntaxType": {
+      "dark": "sapphire",
+      "light": "sapphire"
+    },
+    "syntaxOperator": {
+      "dark": "pewter",
+      "light": "charcoal"
+    },
+    "syntaxPunctuation": {
+      "dark": "silver",
+      "light": "charcoal"
+    }
+  }
+}

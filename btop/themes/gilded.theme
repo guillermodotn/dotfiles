@@ -1,0 +1,84 @@
+# Theme: gilded
+# Art Deco — ebony, gold leaf, jade, sapphire
+# Compatible with both btop and bpytop
+
+theme[main_bg]="#19160f"
+theme[main_fg]="#f0e8d8"
+
+# Title — gold (primary accent)
+theme[title]="#c8a038"
+
+# Keyboard shortcuts highlight — gold (primary accent)
+theme[hi_fg]="#c8a038"
+
+# Selected process
+theme[selected_bg]="#28241a"
+theme[selected_fg]="#f0e8d8"
+
+# Inactive/disabled text
+theme[inactive_fg]="#3a362a"
+
+# Graph text labels (uptime, scale)
+theme[graph_text]="#c8be9c"
+
+# Meter background track
+theme[meter_bg]="#3a362a"
+
+# Process box misc — sapphire (type role)
+theme[proc_misc]="#4888d8"
+
+# Box outlines — each box gets its role color, dim variant
+# cpu  → gold      (primary accent)
+# mem  → jade      (ok/free = green)
+# net  → sapphire  (data flow = blue)
+# proc → champagne (secondary accent)
+theme[cpu_box]="#a07828"
+theme[mem_box]="#1e8850"
+theme[net_box]="#2860b0"
+theme[proc_box]="#c06428"
+theme[div_line]="#3a362a"
+
+# Temperature graph: jade → gold → crimson
+theme[temp_start]="#28b870"
+theme[temp_mid]="#c8a038"
+theme[temp_end]="#d02848"
+
+# CPU graph: jade → gold → crimson
+theme[cpu_start]="#28b870"
+theme[cpu_mid]="#c8a038"
+theme[cpu_end]="#d02848"
+
+# Mem/Disk free meter: jade shades (free = good = green)
+theme[free_start]="#28b870"
+theme[free_mid]="#1e8850"
+theme[free_end]="#146638"
+
+# Mem/Disk cached meter: sapphire shades
+theme[cached_start]="#5898e8"
+theme[cached_mid]="#4888d8"
+theme[cached_end]="#2860b0"
+
+# Mem/Disk available meter: jade shades
+theme[available_start]="#28b870"
+theme[available_mid]="#1e8850"
+theme[available_end]="#146638"
+
+# Mem/Disk used meter: gold → champagne → crimson (caution → warning → danger)
+theme[used_start]="#c8a038"
+theme[used_mid]="#e8782a"
+theme[used_end]="#d02848"
+
+# Download graph: sapphire → jade
+theme[download_start]="#4888d8"
+theme[download_mid]="#28b870"
+theme[download_end]="#c8a038"
+
+# Upload graph: champagne → gold
+theme[upload_start]="#e8782a"
+theme[upload_mid]="#c8a038"
+theme[upload_end]="#28b870"
+
+# Process gradient: jade → gold → sapphire
+theme[process_start]="#28b870"
+theme[process_mid]="#c8a038"
+theme[process_end]="#4888d8"

@@ -1,0 +1,40 @@
+# Gilded — Art Deco terminal theme for Ghostty
+# To use: copy to ~/.config/ghostty/themes/gilded
+# Then set in ghostty config: theme = gilded
+
+# Normal colors (slots 0–7)
+# 0 black    = overlay (darkest bg tone)
+# 1 red      = crimson (error)
+# 2 green    = jade (strings, ok)
+# 3 yellow   = gold (functions, path)
+# 4 blue     = sapphire (types)
+# 5 magenta  = blush (numbers, venv)
+# 6 cyan     = champagne (keywords, git)
+# 7 white    = silver (identifiers)
+palette = 0=#28241a
+palette = 1=#d02848
+palette = 2=#28b870
+palette = 3=#c8a038
+palette = 4=#4888d8
+palette = 5=#d07888
+palette = 6=#e8782a
+palette = 7=#c8be9c
+
+# Bright colors (slots 8–15) — lighter variants for bold text
+palette = 8=#706858
+palette = 9=#e8304e
+palette = 10=#30d880
+palette = 11=#e0b840
+palette = 12=#5898e8
+palette = 13=#e088a0
+palette = 14=#f09040
+palette = 15=#f0e8d8
+
+background = #19160f
+foreground = #f0e8d8
+
+cursor-color = #c8a038
+cursor-text = #19160f
+
+selection-background = #3a362a
+selection-foreground = #f0e8d8

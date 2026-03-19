@@ -1,15 +1,10 @@
 return {
 	{
-		"folke/tokyonight.nvim",
+		dir = "~/.config/nvim/gilded",
+		name = "gilded",
 		priority = 1000,
 		config = function()
-			require("tokyonight").setup({
-				style = "storm",
-				styles = {
-					comments = { italic = false }, -- No italics in comments
-				},
-			})
-			vim.cmd.colorscheme("tokyonight-storm")
+			vim.cmd.colorscheme("gilded")
 		end,
 	},
 }

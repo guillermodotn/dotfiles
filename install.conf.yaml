@@ -14,6 +14,7 @@
     #### Neovim ####
     ~/.config/nvim/init.lua: nvim/init.lua
     ~/.config/nvim/lua: nvim/lua/
+    ~/.config/nvim/gilded: nvim-gilded/
 
     #### Bash ####
     ~/.bashrc.d/_env-vars.sh: bashrc.d/env-vars.sh # `_` helps to make it the first in been sourced

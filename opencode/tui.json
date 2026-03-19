@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/tui.json",
-  "theme": "tokyonight-storm",
+  "theme": "gilded",
   "keybinds": {
     "sidebar_toggle": "ctrl+b",
     "scrollbar_toggle": "none",
