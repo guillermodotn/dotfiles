@@ -45,9 +45,4 @@
     ~/.config/themes: themes/
 
     #### Opencode ####
-    ~/.config/opencode/opencode.json: opencode/opencode.json
-    ~/.config/opencode/tui.json: opencode/tui.json
-    ~/.config/opencode/themes/tokyonight-storm.json: opencode/themes/tokyonight-storm.json
-    ~/.config/opencode/themes/earthsong.json: opencode/themes/earthsong.json
-    ~/.config/opencode/themes/gilded.json: opencode/themes/gilded.json
-
+    ~/.config/opencode: opencode/
