@@ -1,10 +1,11 @@
 return {
 	{
-		dir = "~/.config/nvim/gilded",
-		name = "gilded",
+		"guillermodotn/nvim-earthsong",
+		name = "earthsong",
 		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme("gilded")
+			require("earthsong").setup()
+			vim.cmd.colorscheme("earthsong")
 		end,
 	},
 }
