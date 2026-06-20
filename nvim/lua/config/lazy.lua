@@ -29,8 +29,8 @@ require("lazy").setup({
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
 	install = { missing = true, colorscheme = { "earthsong" } },
-	-- automatically check for plugin updates
-	checker = { enabled = true },
+	-- automatically check for plugin updates (no popup notifications)
+	checker = { enabled = true, notify = false },
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
 		-- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
@@ -52,9 +52,7 @@ require("lazy").setup({
 	},
 })
 
--- Auto-sync plugins on startup
-vim.api.nvim_create_autocmd("VimEnter", {
-	callback = function()
-		require("lazy").sync({ wait = false, show = false })
-	end,
-})
+-- NOTE: install.missing = true handles first-time plugin installs.
+-- checker.enabled = true handles background update notifications.
+-- No need for lazy.sync() on every VimEnter — it forces network access
+-- and causes "could not resolve host" errors when offline.
