@@ -1,0 +1,48 @@
+# INFO: Installation command
+# dotbot -c install.conf.yaml
+
+- defaults:
+    link:
+      relink: true
+      force: true
+      create: true
+      ignore-missing: true
+
+- clean: ["~"]
+
+- link:
+    #### Neovim ####
+    ~/.config/nvim/init.lua: nvim/init.lua
+    ~/.config/nvim/lua: nvim/lua/
+    ~/.config/nvim/gilded: nvim-gilded/
+
+    #### Bash ####
+    ~/.bashrc.d/_env-vars.sh: bashrc.d/env-vars.sh # `_` helps to make it the first in been sourced
+    ~/.bashrc.d/aliases.sh: bashrc.d/aliases.sh
+    ~/.bashrc.d/prompt.sh: bashrc.d/prompt.sh
+    ~/.bashrc.d/history.sh: bashrc.d/history.sh
+    ~/.bashrc.d/tmux-auto-init.sh: bashrc.d/tmux-auto-init.sh
+    ~/.bashrc.d/editing-mode.sh: bashrc.d/editing-mode.sh
+
+    #### Terminal ####
+    ~/.config/ghostty: ghostty
+    ~/.config/tmux: tmux/
+
+    #### Python ####
+    ~/.config/uv/uv.toml: uv/uv.toml
+    ~/.config/pip/pip.conf: pip/pip.conf
+    ~/.config/bpython/config: bpython/config
+    ~/.config/bpytop: bpytop
+
+    #### Tools ####
+    ~/.config/btop: btop/
+    ~/.config/lsd: lsd/
+    ~/.config/mpv: mpv/
+    ~/.config/git: git/
+    ~/.config/Code/User/settings.json: codium/settings.json
+
+    #### Themes (btop alternates) ####
+    ~/.config/themes: themes/
+
+    #### Opencode ####
+    ~/.config/opencode: opencode/
