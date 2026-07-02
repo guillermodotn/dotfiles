@@ -10,12 +10,11 @@
 
 - link:
     #### Neovim ####
-    ~/.config/nvim/init.lua: nvim/init.lua
-    ~/.config/nvim/lua: nvim/lua
+    ~/.config/nvim: nvim
 
     #### Bash ####
     ~/.bashrc: .bashrc
-    ~/.inputrc: .inputrc
+    # ~/.inputrc: .inputrc
     ~/.bashrc.d/aliases.sh: bashrc.d/aliases.sh
     ~/.bashrc.d/history.sh: bashrc.d/history.sh
 
