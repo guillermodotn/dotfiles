@@ -5,7 +5,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = true
+vim.g.have_nerd_font = false
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
@@ -23,25 +23,6 @@ vim.o.mouse = "a"
 
 -- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
-
--- Clipboard: OSC 52 for copy (works through tmux/SSH via terminal escape sequences),
--- wl-paste for paste (reads Wayland clipboard directly, avoids Ghostty's OSC 52 read block).
---  See `:help 'clipboard'`
-vim.g.clipboard = {
-	name = "OSC 52",
-	copy = {
-		["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-		["*"] = require("vim.ui.clipboard.osc52").copy("*"),
-	},
-	paste = {
-		["+"] = { "wl-paste", "--no-newline" },
-		["*"] = { "wl-paste", "--no-newline", "--primary" },
-	},
-}
-
-vim.schedule(function()
-	vim.o.clipboard = "unnamedplus"
-end)
 
 -- Enable break indent
 vim.o.breakindent = true

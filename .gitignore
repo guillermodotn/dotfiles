@@ -1,5 +1,6 @@
 __pycache__/
 *.log
+nvim/lazy-lock.json
 
 
 # Secrets and private config
