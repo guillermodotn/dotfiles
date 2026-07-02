@@ -4,217 +4,76 @@
     "base": "#292520",
     "surface": "#322d27",
     "overlay": "#3c3731",
-    "subtle": "#8b8278",
-    "textMuted": "#9a8b7a",
+    "highlight_low": "#4a443d",
+    "highlight_med": "#564f47",
+    "highlight_high": "#675f54",
+    "bg_red": "#3d2520",
+    "bg_green": "#2a3522",
+    "bg_blue": "#1e3038",
+    "bg_visual": "#4a3828",
     "text": "#e5c7a9",
     "terracotta": "#ff645a",
-    "amber": "#f5ae2e",
     "clay": "#d0633d",
+    "amber": "#f5ae2e",
     "oak": "#509552",
     "sage": "#1398b9",
     "moss": "#85c54c",
-    "leaf": "#98e036"
+    "leaf": "#98e036",
+    "muted": "#675f54",
+    "subtle": "#8a7e70",
+    "dim": "#9e9080"
   },
   "theme": {
-    "primary": {
-      "dark": "sage",
-      "light": "sage"
-    },
-    "secondary": {
-      "dark": "moss",
-      "light": "moss"
-    },
-    "accent": {
-      "dark": "leaf",
-      "light": "leaf"
-    },
-    "error": {
-      "dark": "terracotta",
-      "light": "terracotta"
-    },
-    "warning": {
-      "dark": "amber",
-      "light": "amber"
-    },
-    "success": {
-      "dark": "oak",
-      "light": "oak"
-    },
-    "info": {
-      "dark": "sage",
-      "light": "sage"
-    },
-    "text": {
-      "dark": "text",
-      "light": "base"
-    },
-    "textMuted": {
-      "dark": "textMuted",
-      "light": "overlay"
-    },
-    "background": {
-      "dark": "base",
-      "light": "text"
-    },
-    "backgroundPanel": {
-      "dark": "surface",
-      "light": "#f5e6d8"
-    },
-    "backgroundElement": {
-      "dark": "surface",
-      "light": "#eedcc9"
-    },
-    "border": {
-      "dark": "overlay",
-      "light": "#d4c4b0"
-    },
-    "borderActive": {
-      "dark": "clay",
-      "light": "clay"
-    },
-    "borderSubtle": {
-      "dark": "surface",
-      "light": "#e8dcc8"
-    },
-    "diffAdded": {
-      "dark": "moss",
-      "light": "oak"
-    },
-    "diffRemoved": {
-      "dark": "terracotta",
-      "light": "terracotta"
-    },
-    "diffContext": {
-      "dark": "overlay",
-      "light": "surface"
-    },
-    "diffHunkHeader": {
-      "dark": "overlay",
-      "light": "surface"
-    },
-    "diffHighlightAdded": {
-      "dark": "leaf",
-      "light": "moss"
-    },
-    "diffHighlightRemoved": {
-      "dark": "terracotta",
-      "light": "terracotta"
-    },
-    "diffAddedBg": {
-      "dark": "#2a3a25",
-      "light": "#e8f5e0"
-    },
-    "diffRemovedBg": {
-      "dark": "#3d2828",
-      "light": "#ffe8e5"
-    },
-    "diffContextBg": {
-      "dark": "surface",
-      "light": "#f5e6d8"
-    },
-    "diffLineNumber": {
-      "dark": "overlay",
-      "light": "surface"
-    },
-    "diffAddedLineNumberBg": {
-      "dark": "#253320",
-      "light": "#e0f0d8"
-    },
-    "diffRemovedLineNumberBg": {
-      "dark": "#352525",
-      "light": "#ffe0dc"
-    },
-    "markdownText": {
-      "dark": "text",
-      "light": "base"
-    },
-    "markdownHeading": {
-      "dark": "sage",
-      "light": "sage"
-    },
-    "markdownLink": {
-      "dark": "amber",
-      "light": "clay"
-    },
-    "markdownLinkText": {
-      "dark": "leaf",
-      "light": "oak"
-    },
-    "markdownCode": {
-      "dark": "moss",
-      "light": "oak"
-    },
-    "markdownBlockQuote": {
-      "dark": "subtle",
-      "light": "textMuted"
-    },
-    "markdownEmph": {
-      "dark": "clay",
-      "light": "clay"
-    },
-    "markdownStrong": {
-      "dark": "amber",
-      "light": "amber"
-    },
-    "markdownHorizontalRule": {
-      "dark": "subtle",
-      "light": "textMuted"
-    },
-    "markdownListItem": {
-      "dark": "sage",
-      "light": "sage"
-    },
-    "markdownListEnumeration": {
-      "dark": "leaf",
-      "light": "leaf"
-    },
-    "markdownImage": {
-      "dark": "amber",
-      "light": "clay"
-    },
-    "markdownImageText": {
-      "dark": "leaf",
-      "light": "oak"
-    },
-    "markdownCodeBlock": {
-      "dark": "text",
-      "light": "base"
-    },
-    "syntaxComment": {
-      "dark": "subtle",
-      "light": "textMuted"
-    },
-    "syntaxKeyword": {
-      "dark": "terracotta",
-      "light": "terracotta"
-    },
-    "syntaxFunction": {
-      "dark": "sage",
-      "light": "sage"
-    },
-    "syntaxVariable": {
-      "dark": "text",
-      "light": "base"
-    },
-    "syntaxString": {
-      "dark": "moss",
-      "light": "oak"
-    },
-    "syntaxNumber": {
-      "dark": "amber",
-      "light": "amber"
-    },
-    "syntaxType": {
-      "dark": "leaf",
-      "light": "leaf"
-    },
-    "syntaxOperator": {
-      "dark": "clay",
-      "light": "clay"
-    },
-    "syntaxPunctuation": {
-      "dark": "text",
-      "light": "base"
-    }
+    "primary":                  { "dark": "sage",        "light": "sage" },
+    "secondary":                { "dark": "moss",        "light": "moss" },
+    "accent":                   { "dark": "clay",        "light": "clay" },
+    "error":                    { "dark": "terracotta",  "light": "terracotta" },
+    "warning":                  { "dark": "amber",       "light": "amber" },
+    "success":                  { "dark": "oak",         "light": "oak" },
+    "info":                     { "dark": "sage",        "light": "sage" },
+    "text":                     { "dark": "text",        "light": "text" },
+    "textMuted":                { "dark": "dim",         "light": "dim" },
+    "thinking":                 { "dark": "amber",       "light": "amber" },
+    "background":               { "dark": "base",        "light": "base" },
+    "backgroundPanel":          { "dark": "surface",     "light": "surface" },
+    "backgroundElement":        { "dark": "overlay",     "light": "overlay" },
+    "border":                   { "dark": "highlight_low",  "light": "highlight_low" },
+    "borderActive":             { "dark": "sage",        "light": "sage" },
+    "borderSubtle":             { "dark": "highlight_med", "light": "highlight_med" },
+    "diffAdded":                { "dark": "oak",         "light": "oak" },
+    "diffRemoved":              { "dark": "terracotta",  "light": "terracotta" },
+    "diffContext":              { "dark": "dim",         "light": "dim" },
+    "diffHunkHeader":           { "dark": "subtle",      "light": "subtle" },
+    "diffHighlightAdded":       { "dark": "moss",        "light": "moss" },
+    "diffHighlightRemoved":     { "dark": "clay",        "light": "clay" },
+    "diffAddedBg":              { "dark": "bg_green",    "light": "bg_green" },
+    "diffRemovedBg":            { "dark": "bg_red",      "light": "bg_red" },
+    "diffContextBg":            { "dark": "surface",     "light": "surface" },
+    "diffLineNumber":           { "dark": "muted",       "light": "muted" },
+    "diffAddedLineNumberBg":    { "dark": "bg_green",    "light": "bg_green" },
+    "diffRemovedLineNumberBg":  { "dark": "bg_red",      "light": "bg_red" },
+    "markdownText":             { "dark": "text",        "light": "text" },
+    "markdownHeading":          { "dark": "sage",        "light": "sage" },
+    "markdownLink":             { "dark": "sage",        "light": "sage" },
+    "markdownLinkText":         { "dark": "moss",        "light": "moss" },
+    "markdownCode":             { "dark": "moss",        "light": "moss" },
+    "markdownBlockQuote":       { "dark": "subtle",      "light": "subtle" },
+    "markdownEmph":             { "dark": "text",        "light": "text" },
+    "markdownStrong":           { "dark": "text",        "light": "text" },
+    "markdownHorizontalRule":   { "dark": "muted",       "light": "muted" },
+    "markdownListItem":         { "dark": "sage",        "light": "sage" },
+    "markdownListEnumeration":  { "dark": "clay",        "light": "clay" },
+    "markdownImage":            { "dark": "sage",        "light": "sage" },
+    "markdownImageText":        { "dark": "moss",        "light": "moss" },
+    "markdownCodeBlock":        { "dark": "text",        "light": "text" },
+    "syntaxComment":            { "dark": "subtle",      "light": "subtle" },
+    "syntaxKeyword":            { "dark": "terracotta",  "light": "terracotta" },
+    "syntaxFunction":           { "dark": "moss",        "light": "moss" },
+    "syntaxVariable":           { "dark": "text",        "light": "text" },
+    "syntaxString":             { "dark": "oak",         "light": "oak" },
+    "syntaxNumber":             { "dark": "amber",       "light": "amber" },
+    "syntaxType":               { "dark": "leaf",        "light": "leaf" },
+    "syntaxOperator":           { "dark": "clay",        "light": "clay" },
+    "syntaxPunctuation":        { "dark": "dim",         "light": "dim" }
   }
 }
