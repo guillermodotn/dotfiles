@@ -24,6 +24,12 @@ vim.o.mouse = "a"
 -- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
 
+-- Indentation defaults (overridden by .editorconfig per project)
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+vim.o.smartindent = true
+
 -- Enable break indent
 vim.o.breakindent = true
 
