@@ -1,81 +1,84 @@
 # Theme: earthsong
-# Color palette: Warm earth tones
+# Warm earth tones with vibrant cool accents
+# Compatible with both btop and bpytop
 
-# Main bg
 theme[main_bg]="#292520"
-
-# Main text color
 theme[main_fg]="#e5c7a9"
 
-# Title color for boxes
-theme[title]="#e5c7a9"
+# Title — sage (primary accent, cool cyan)
+theme[title]="#1398b9"
 
-# Highlight color for keyboard shortcuts
+# Keyboard shortcuts highlight — sage (primary accent)
 theme[hi_fg]="#1398b9"
 
-# Background color of selected item in processes box
+# Selected process
 theme[selected_bg]="#3c3731"
-
-# Foreground color of selected item in processes box
 theme[selected_fg]="#e5c7a9"
 
-# Color of inactive/disabled text
+# Inactive/disabled text
 theme[inactive_fg]="#322d27"
 
-# Misc colors for processes box including mini cpu graphs, details memory graph and details status text
+# Graph text labels (uptime, scale)
+theme[graph_text]="#9a8b7a"
+
+# Meter background track
+theme[meter_bg]="#3c3731"
+
+# Process box misc — sage (primary accent)
 theme[proc_misc]="#1398b9"
 
-# Cpu box outline color
-theme[cpu_box]="#3c3731"
-
-# Memory/disks box outline color
-theme[mem_box]="#3c3731"
-
-# Net up/down box outline color
-theme[net_box]="#3c3731"
-
-# Processes box outline color
-theme[proc_box]="#3c3731"
-
-# Box divider line and small boxes line color
+# Box outlines — each box gets its role color, dim variant
+# cpu  → sage      (primary accent, cool)
+# mem  → oak       (ok/free = forest green)
+# net  → amber     (data flow = warm yellow)
+# proc → clay      (secondary accent, orange-brown)
+theme[cpu_box]="#0d6e85"
+theme[mem_box]="#376a3a"
+theme[net_box]="#a87820"
+theme[proc_box]="#923f22"
 theme[div_line]="#3c3731"
 
-# Temperature graph colors
+# Temperature graph: oak → amber → terracotta
 theme[temp_start]="#509552"
 theme[temp_mid]="#f5ae2e"
 theme[temp_end]="#ff645a"
 
-# CPU graph colors
+# CPU graph: oak → amber → terracotta
 theme[cpu_start]="#509552"
 theme[cpu_mid]="#f5ae2e"
 theme[cpu_end]="#ff645a"
 
-# Mem/Disk free meter
+# Mem/Disk free meter: oak shades (free = good = green)
 theme[free_start]="#85c54c"
 theme[free_mid]="#509552"
-theme[free_end]="#f5ae2e"
+theme[free_end]="#376a3a"
 
-# Mem/Disk cached meter
+# Mem/Disk cached meter: moss → leaf shades
 theme[cached_start]="#98e036"
 theme[cached_mid]="#85c54c"
 theme[cached_end]="#509552"
 
-# Mem/Disk available meter
+# Mem/Disk available meter: oak shades
 theme[available_start]="#85c54c"
 theme[available_mid]="#509552"
-theme[available_end]="#f5ae2e"
+theme[available_end]="#376a3a"
 
-# Mem/Disk used meter
+# Mem/Disk used meter: amber → clay → terracotta (caution → warning → danger)
 theme[used_start]="#f5ae2e"
 theme[used_mid]="#d0633d"
 theme[used_end]="#ff645a"
 
-# Download graph colors
+# Download graph: sage → moss → leaf
 theme[download_start]="#1398b9"
 theme[download_mid]="#85c54c"
 theme[download_end]="#98e036"
 
-# Upload graph colors
-theme[upload_start]="#1398b9"
-theme[upload_mid]="#85c54c"
-theme[upload_end]="#98e036"
+# Upload graph: clay → amber → oak
+theme[upload_start]="#d0633d"
+theme[upload_mid]="#f5ae2e"
+theme[upload_end]="#509552"
+
+# Process gradient: oak → sage → moss
+theme[process_start]="#509552"
+theme[process_mid]="#1398b9"
+theme[process_end]="#85c54c"
