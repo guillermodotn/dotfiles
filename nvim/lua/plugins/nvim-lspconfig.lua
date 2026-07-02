@@ -1,3 +1,4 @@
+-- LSP: language servers, diagnostics, go-to-definition, code actions
 return {
 	-- Mason: package manager for LSP servers, formatters, linters
 	{
@@ -32,8 +33,7 @@ return {
 				"rust_analyzer",
 				"yamlls",
 			},
-			-- Automatically enable installed servers via vim.lsp.enable()
-			automatic_enable = true,
+			-- automatic_enable defaults to true — installed servers are auto-enabled via vim.lsp.enable()
 		},
 	},
 
@@ -44,6 +44,7 @@ return {
 		opts = {
 			ensure_installed = {
 				"stylua", -- Lua formatter
+				"goimports", -- Go formatter (superset of gofmt, auto-manages imports)
 				"ansible-lint", -- Ansible linter
 			},
 		},

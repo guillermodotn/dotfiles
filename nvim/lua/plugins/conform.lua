@@ -1,4 +1,5 @@
-return { -- Autoformat
+-- Auto-format on save (ruff for Python, goimports for Go, stylua for Lua)
+return {
 	"stevearc/conform.nvim",
 	event = { "BufWritePre" },
 	cmd = { "ConformInfo" },
@@ -33,7 +34,7 @@ return { -- Autoformat
 			-- Conform can also run multiple formatters sequentially
 			-- python = { "isort", "black" },
 			python = { "ruff_format" },
-			go = { "gofmt" },
+			go = { "goimports" },
 			--
 			-- You can use 'stop_after_first' to run the first available formatter from the list
 			-- javascript = { "prettierd", "prettier", stop_after_first = true },

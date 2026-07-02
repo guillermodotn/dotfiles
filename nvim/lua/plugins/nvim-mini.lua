@@ -1,4 +1,5 @@
-return { -- Collection of various small independent plugins/modules
+-- Collection of small modules: text objects (mini.ai), surround (mini.surround), statusline (mini.statusline)
+return {
 	"echasnovski/mini.nvim",
 	config = function()
 		-- Better Around/Inside textobjects

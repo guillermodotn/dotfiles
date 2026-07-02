@@ -1,4 +1,5 @@
-return { -- Useful plugin to show you pending keybinds.
+-- Shows pending keybinds in a popup when you press a leader key
+return {
 	"folke/which-key.nvim",
 	event = "VimEnter", -- Sets the loading event to 'VimEnter'
 	opts = {

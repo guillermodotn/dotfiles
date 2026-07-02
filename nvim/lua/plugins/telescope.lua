@@ -1,4 +1,5 @@
-return { -- Fuzzy Finder (files, lsp, etc)
+-- Fuzzy finder for files, grep, LSP symbols, and more
+return {
 	"nvim-telescope/telescope.nvim",
 	event = "VimEnter",
 	dependencies = {
