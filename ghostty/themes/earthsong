@@ -1,0 +1,45 @@
+# Earthsong — terminal theme for Ghostty
+# Warm earth palette with vibrant cool accents
+# Canonical palette from guillermodotn/nvim-earthsong (main variant)
+#
+# ANSI slot assignments:
+#   slot 0  black         = overlay     #3c3731  (darkest bg tone, dark text)
+#   slot 1  red           = terracotta  #ff645a  (error)
+#   slot 2  green         = oak         #509552  (success, muted green)
+#   slot 3  yellow        = amber       #f5ae2e  (warning, numbers — warm primary)
+#   slot 4  blue          = sage        #1398b9  (primary accent — cool cyan on warm bg)
+#   slot 5  magenta       = clay        #d0633d  (operators, orange-brown)
+#   slot 6  cyan          = moss        #85c54c  (strings — bright green)
+#   slot 7  white         = text        #e5c7a9  (foreground / identifiers)
+#   slot 8  bright black  = muted       #675f54  (comments, dim text)
+#   slot 9  bright red    = #ff7a70     (bright terracotta)
+#   slot 10 bright green  = leaf        #98e036  (bright green / type accent)
+#   slot 11 bright yellow = #ffc040     (bright amber)
+#   slot 12 bright blue   = #28b8d8     (bright sage)
+#   slot 13 bright magenta= #e07858     (bright clay)
+#   slot 14 bright cyan   = #a0d860     (bright moss)
+#   slot 15 bright white  = #f0e0c8    (near-white, brightest fg)
+
+palette = 0=#3c3731
+palette = 1=#ff645a
+palette = 2=#509552
+palette = 3=#f5ae2e
+palette = 4=#1398b9
+palette = 5=#d0633d
+palette = 6=#85c54c
+palette = 7=#e5c7a9
+palette = 8=#675f54
+palette = 9=#ff7a70
+palette = 10=#98e036
+palette = 11=#ffc040
+palette = 12=#28b8d8
+palette = 13=#e07858
+palette = 14=#a0d860
+palette = 15=#f0e0c8
+
+background = #292520
+foreground = #e5c7a9
+cursor-color = #1398b9
+cursor-text = #292520
+selection-background = #3c3731
+selection-foreground = #e5c7a9
