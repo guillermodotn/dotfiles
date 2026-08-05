@@ -9,9 +9,6 @@
 - clean: ["~"]
 
 - link:
-    #### Neovim ####
-    ~/.config/nvim: nvim
-
     #### Bash ####
     ~/.bashrc: .bashrc
     # ~/.inputrc: .inputrc
@@ -19,11 +16,10 @@
     ~/.bashrc.d/history.sh: bashrc.d/history.sh
 
     #### Tools ####
-    ~/.config/mpv: mpv
+    # ~/.config/mpv: mpv
     ~/.config/git: git
-
-    #### Opencode ####
-    ~/.config/opencode: opencode
+    ~/.config/tmux: tmux
+    ~/.config/nvim: nvim
 
 - create:
     - ~/.bashrc.d
