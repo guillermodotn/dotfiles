@@ -33,9 +33,36 @@ return {
 		},
 
 		appearance = {
-			-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-			-- Adjusts spacing to ensure icons are aligned
-			nerd_font_variant = "mono",
+			-- Use Nerd Font icons if available, otherwise use text kind labels
+			use_nvim_cmp_as_default = not vim.g.have_nerd_font,
+			nerd_font_variant = vim.g.have_nerd_font and "mono" or "normal",
+			kind_icons = not vim.g.have_nerd_font and {
+				Text = "txt",
+				Method = "mth",
+				Function = "fn",
+				Constructor = "new",
+				Field = ".f",
+				Variable = "var",
+				Class = "cls",
+				Interface = "if",
+				Module = "mod",
+				Property = ".p",
+				Unit = "u",
+				Value = "val",
+				Enum = "enm",
+				Keyword = "kw",
+				Snippet = "snp",
+				Color = "clr",
+				File = "fil",
+				Reference = "ref",
+				Folder = "dir",
+				EnumMember = "em",
+				Constant = "con",
+				Struct = "st",
+				Event = "ev",
+				Operator = "op",
+				TypeParameter = "tp",
+			} or nil,
 		},
 
 		completion = {
