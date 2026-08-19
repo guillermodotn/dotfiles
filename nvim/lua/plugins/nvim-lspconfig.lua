@@ -28,7 +28,6 @@ return {
 				"gopls",
 				"jinja_lsp",
 				"lua_ls",
-				"pyright",
 				"ruff",
 				"rust_analyzer",
 				"yamlls",
@@ -82,6 +81,9 @@ return {
 				capabilities = require("blink.cmp").get_lsp_capabilities(),
 			})
 
+			-- ty: Python type checker and language server (installed via `uv tool install ty`)
+			vim.lsp.enable("ty")
+
 			--  This function gets run when an LSP attaches to a particular buffer.
 			--    That is to say, every time a new file is opened that is associated with
 			--    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
@@ -119,11 +121,7 @@ return {
 					map("gO", require("telescope.builtin").lsp_document_symbols, "Open Document Symbols")
 
 					-- Fuzzy find all the symbols in your current workspace.
-					map(
-						"gW",
-						require("telescope.builtin").lsp_dynamic_workspace_symbols,
-						"Open Workspace Symbols"
-					)
+					map("gW", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Open Workspace Symbols")
 
 					-- Jump to the type of the word under your cursor.
 					map("grt", require("telescope.builtin").lsp_type_definitions, "[G]oto [T]ype Definition")
@@ -134,7 +132,10 @@ return {
 					--
 					-- When you move your cursor, the highlights will be cleared (the second autocommand).
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
-					if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
+					if
+						client
+						and client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf)
+					then
 						local highlight_augroup =
 							vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
 						vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
@@ -162,7 +163,9 @@ return {
 					end
 
 					-- Toggle inlay hints if the language server supports them
-					if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
+					if
+						client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf)
+					then
 						map("<leader>th", function()
 							vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
 						end, "[T]oggle Inlay [H]ints")
@@ -175,7 +178,7 @@ return {
 			vim.diagnostic.config({
 				update_in_insert = false,
 				severity_sort = true,
-				float = { border = "rounded", source = "if_many" },
+				float = { border = "rounded", source = "true" },
 				underline = { severity = vim.diagnostic.severity.ERROR },
 				-- Auto open the float when jumping with [d and ]d
 				jump = {
@@ -196,7 +199,7 @@ return {
 					},
 				} or {},
 				virtual_text = {
-					source = "if_many",
+					source = "true",
 					spacing = 2,
 				},
 			})
