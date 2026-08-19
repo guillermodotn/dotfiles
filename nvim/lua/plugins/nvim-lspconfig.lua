@@ -173,9 +173,20 @@ return {
 			-- Diagnostic Config
 			-- See :help vim.diagnostic.Opts
 			vim.diagnostic.config({
+				update_in_insert = false,
 				severity_sort = true,
 				float = { border = "rounded", source = "if_many" },
 				underline = { severity = vim.diagnostic.severity.ERROR },
+				-- Auto open the float when jumping with [d and ]d
+				jump = {
+					on_jump = function(_, bufnr)
+						vim.diagnostic.open_float({
+							bufnr = bufnr,
+							scope = "cursor",
+							focus = false,
+						})
+					end,
+				},
 				signs = vim.g.have_nerd_font and {
 					text = {
 						[vim.diagnostic.severity.ERROR] = "󰅚 ",
